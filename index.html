@@ -2,18 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/v4-shims.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" />      
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airbnb | Holiday rentals, cabins, beach house & more</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/v4-shims.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" />
 </head>
 
 <body>
@@ -27,24 +28,60 @@
   </header>
   <div class="menu-tabs">
     <div class="tab active">
-         <img src="🏠" alt="Homes"/>
-         <span>Homes</span>
+      <div class="icon-wrapper">
+        <span class="emoji">🏠</span>
+      </div>
+      <span class="label">Homes</span>
     </div>
 
     <div class="tab">
       <div class="icon-wrapper">
-        <img src="🎈" alt="Experiences"/>
-        <span class="badge">Experiences</span>
-      </div>  
+        <span class="emoji">🎈</span>
+        <span class="badge">New</span>
+      </div>
+      <span class="label">Experiences</span>
     </div>
 
     <div class="tab">
-       <div class="icon-wrapper">
-         <img src="🛎️" alt="Services"/>
-         <span class="badge">Services</span>
-
-       </div>
+      <div class="icon-wrapper">
+        <span class="emoji">🛎️</span>
+        <span class="badge">New</span>
+      </div>
+      <span class="label">Services</span>
+    </div>
   </div>
+
+  <section class="popular-homes-section">
+  <h3>Popular homes in Bengaluru</h3>
+  <div class="homes-slider">
+    <!-- Card 1 -->
+    <div class="home-card">
+      <div class="img-wrapper">
+        <span class="badge-text">Guest favourite</span>
+        <img src="https://via.placeholder.com/300x200" alt="Home 1" />
+        <button class="heart">&hearts;</button>
+      </div>
+      <h4>Apartment in Bangalore Urban</h4>
+      <p>₹3,878 for 2 nights · ★ 5.0</p>
+    </div>
+
+    <!-- Repeat similar cards -->
+    <div class="home-card">
+      <div class="img-wrapper">
+        <span class="badge-text">Guest favourite</span>
+        <img src="https://via.placeholder.com/300x200" alt="Home 2" />
+        <button class="heart">&hearts;</button>
+      </div>
+      <h4>Flat in Bangalore Urban</h4>
+      <p>₹5,478 for 2 nights · ★ 5.0</p>
+    </div>
+
+    <!-- Add 6 more like above -->
+    <!-- You can copy the same .home-card structure and change image/text -->
+  </div>
+</section>
+
+
 </body>
 
 </html>

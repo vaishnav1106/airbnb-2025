@@ -14,7 +14,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 0;
+  padding: 20px 0 0 0;
 }
 
 .search-wrapper {
@@ -48,20 +48,131 @@ body {
   color: black;
 }
 
-.menu-tabs{
+.menu-tabs {
   display: flex;
   justify-content: center;
-  background-color: white;
-  padding:12px 0;
-  border-top:1px solid #ddd;
-  box-shadow:0 -1px 4px rgb(0 0 0 0.05)
+  gap: 50px;
+  padding: 20px 0px 0px 0px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.tab{
+.tab {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 14px;
-  color:#ddd;
   position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.tab:hover {
+  transform: scale(1.05);
+}
+
+.icon-wrapper {
+  position: relative;
+  font-size: 28px;
+}
+
+.emoji {
+  font-size: 30px;
+}
+
+.badge {
+  position: absolute;
+  right: -25px;
+  background-color: rgb(19, 91, 158);
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.label {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+.tab.active .label {
+  font-weight: bold;
+  border-bottom: 3px solid #333;
+}
+
+
+.popular-homes-section {
+  padding: 1rem;
+}
+
+.popular-homes-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.homes-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+}
+
+.home-card {
+  flex: 0 0 auto;
+  width: 250px;
+  scroll-snap-align: start;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.img-wrapper {
+  position: relative;
+  border-radius: 1rem 1rem 0 0;
+  overflow: hidden;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.badge-text {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #fff;
+  color: #333;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  border: none;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.home-card h4 {
+  margin: 0.75rem 0 0.3rem;
+  font-size: 1rem;
+  padding: 0 0.75rem;
+}
+
+.home-card p {
+  font-size: 0.9rem;
+  color: #555;
+  padding: 0 0.75rem 1rem;
 }
