@@ -172,7 +172,10 @@ body {
   font-size: 30px;
   color: white;
   cursor: pointer;
-  padding: 0;                /* ✅ Remove padding if any */
+  padding: 0;   
+   font-size: 40px;
+  color: rgba(128, 128, 128, 0.4); /* grey transparent inside */
+  -webkit-text-stroke: 1.5px white; /* white border */             /* ✅ Remove padding if any */
 }
 
 /* Card text */
