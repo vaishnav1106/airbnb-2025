@@ -6,7 +6,7 @@ body {
 
 @media (max-width: 750px) {
   body {
-    background-color: rgba(230, 227, 227, 0.466);
+    background-color: rgba(255, 255, 255, 0.466);
   }
  
 }
@@ -14,7 +14,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0 0 0;
+  padding: 15px 0 0 0;
 }
 
 .search-wrapper {
@@ -35,7 +35,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 12px 20px;
-  font-size: 16px;
+  font-size: 14px;
   border: none;
   border-radius: 30px;
   background-color: white;
@@ -44,7 +44,7 @@ body {
 
 .search-button i {
   margin-right: 8px;
-  font-size: 16px;
+  font-size: 14px;
   color: black;
 }
 
@@ -52,7 +52,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 50px;
-  padding: 20px 0px 0px 0px;
+  padding: 20px 60px 0px 60px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -102,7 +102,8 @@ body {
 
 
 .popular-homes-section {
-  padding: 1rem;
+  margin: 0 0 0 1rem;
+  
 }
 
 .popular-homes-section h3 {
@@ -116,63 +117,73 @@ body {
   gap: 1rem;
   scroll-snap-type: x mandatory;
   padding-bottom: 1rem;
+  padding: 0 0 0 .5rem;
+  scrollbar-width: none;
+  flex-shrink:initial;
 }
 
+
+/* Home Card */
 .home-card {
   flex: 0 0 auto;
-  width: 250px;
+  max-width: 200px;
+  width: 85%;
   scroll-snap-align: start;
-  border-radius: 1rem;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 14px;
+  color: #222;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .img-wrapper {
   position: relative;
-  border-radius: 1rem 1rem 0 0;
+  max-width: 200px;
+  width: 100%;
+  height: 180px;
   overflow: hidden;
+  border-radius: 12px;
 }
 
 .img-wrapper img {
   width: 100%;
-  height: 160px;
+  height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 12px;
 }
 
 .badge-text {
   position: absolute;
-  top: 10px;
+  top: 12px;
   left: 10px;
-  background: #fff;
-  color: #333;
-  padding: 0.3rem 0.6rem;
-  font-size: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
+  padding: 4px 10px;
   border-radius: 999px;
   font-weight: bold;
 }
 
 .heart {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #fff;
+  top: 3px;
+  right: 20px;
+  background: transparent;  /* ✅ Remove background */
   border: none;
-  border-radius: 999px;
-  width: 32px;
-  height: 32px;
-  font-size: 1rem;
+  font-size: 30px;
+  color: white;
   cursor: pointer;
+  padding: 0;                /* ✅ Remove padding if any */
 }
 
+/* Card text */
 .home-card h4 {
-  margin: 0.75rem 0 0.3rem;
-  font-size: 1rem;
-  padding: 0 0.75rem;
+  font-size: 10px;
+  margin: 0.5rem 0 0.2rem;
 }
 
 .home-card p {
-  font-size: 0.9rem;
-  color: #555;
-  padding: 0 0.75rem 1rem;
+  margin: 0;
+  color: #717171;
+  font-size: 9px;
 }
+
