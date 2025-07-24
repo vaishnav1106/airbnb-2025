@@ -190,3 +190,37 @@ body {
   font-size: 9px;
 }
 
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #717171; /* Default grey color */
+  cursor: pointer;
+}
+
+.nav-item i {
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
+}
+
+.nav-item.active {
+  color: #e41d56; /* Airbnb red */
+}
+
+.nav-item.active i {
+  color: #e41d56;
+}
