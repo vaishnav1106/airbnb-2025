@@ -1,5 +1,5 @@
        body {
-            background-color: rgba(230, 227, 227, 0.466);
+            background-color: rgb(255, 255, 255);
             margin: 0;
             font-family: sans-serif;
         }
@@ -229,13 +229,4 @@
             color: #e41d56;
         }
 
-        /* ✅ NEW: Responsive slider cards */
-        @media (max-width: 500px) {
-            .home-card {
-                flex: 0 0 160px;
-            }
-
-            .img-wrapper {
-                height: 150px;
-            }
-        }
+      `
