@@ -51,7 +51,7 @@
        .menu-tabs {
          display: flex;
          justify-content: center;
-         gap: 50px;
+         gap: 60px;
          padding: 20px 60px 0px 60px;
          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
        }
@@ -90,8 +90,8 @@
        }
 
        .label {
-         margin-top: 6px;
-         font-size: 14px;
+         margin-top: 8px;
+         font-size: 16px;
          color: #333;
        }
 
@@ -105,6 +105,7 @@
          margin-bottom: 1rem;
          padding-left: 20px;
          font-family: 'roboto', sans-serif;
+         color:#2b2a2a;
        }
 
        .homes-slider {
@@ -116,8 +117,6 @@
          padding-right: 1rem;
          padding-bottom: 1rem;
          scrollbar-width: none;
-         -ms-overflow-style: none;
-
        }
 
        .homes-slider::-webkit-scrollbar {
@@ -132,8 +131,8 @@
          font-size: 14px;
          color: #222;
          border-radius: 12px;
+         flex-wrap:wrap;
          overflow: hidden;
-         flex-wrap: wrap;
          /* Fix overflow */
          background-color: #fff;
          /* Optional: Makes card more visible */
@@ -190,6 +189,7 @@
          font-size: 14px;
          margin: 0.5rem 0 0.2rem;
          text-align: left;
+         color:#222222
        }
 
        .home-card p {
@@ -247,6 +247,8 @@
         font-size: 22px;
         padding-left :20px;
         margin-bottom: 20px;
+        color:#302e2e;
+        
        }
        
 
