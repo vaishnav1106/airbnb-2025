@@ -1,232 +1,250 @@
        body {
-            background-color: rgb(255, 255, 255);
-            margin: 0;
-            font-family: sans-serif;
-        }
+         background-color: rgb(255, 255, 255);
+         margin: 0;
+         font-family: sans-serif;
+       }
 
-        @media (max-width: 743px) {
-            body {
-                background-color: rgba(255, 255, 255, 0.466);
-            }
-        }
+       @media (max-width: 743px) {
+         body {
+           background-color: rgba(255, 255, 255, 0.466);
+         }
+       }
 
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 15px 0 0 0;
-        }
+       .hero {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 15px 0 0 0;
+       }
 
-        .search-wrapper {
-            width: 100%;
-            max-width: 500px;
-            margin: 0 16px;
-            display: flex;
-            justify-content: center;
-            background-color: white;
-            border-radius: 30px;
-            padding: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
+       .search-wrapper {
+         width: 100%;
+         max-width: 500px;
+         margin: 0 16px;
+         display: flex;
+         justify-content: center;
+         background-color: white;
+         border-radius: 30px;
+         padding: 8px;
+         box-shadow: 1px 02px 01px 01px rgba(0, 0, 0, 0.1);
+       }
 
-        .search-button {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 20px;
-            font-size: 14px;
-            border: none;
-            border-radius: 30px;
-            background-color: white;
-            cursor: pointer;
-        }
+       .search-button {
+         flex: 1;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         padding: 12px 20px;
+         font-size: 14px;
+         border: none;
+         border-radius: 30px;
+         background-color: white;
+         cursor: pointer;
+       }
 
-        .search-button i {
-            margin-right: 8px;
-            font-size: 14px;
-            color: black;
-        }
+       .search-button i {
+         margin-right: 8px;
+         font-size: 14px;
+         color: black;
+       }
 
-        .menu-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            padding: 20px 60px 0px 60px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+       .menu-tabs {
+         display: flex;
+         justify-content: center;
+         gap: 50px;
+         padding: 20px 60px 0px 60px;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+       }
 
-        .tab {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
+       .tab {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         position: relative;
+         cursor: pointer;
+         transition: transform 0.2s ease;
+       }
 
-        .tab:hover {
-            transform: scale(1.05);
-        }
+       .tab:hover {
+         transform: scale(1.05);
+       }
 
-        .icon-wrapper {
-            position: relative;
-            font-size: 28px;
-        }
+       .icon-wrapper {
+         position: relative;
+         font-size: 28px;
+       }
 
-        .emoji {
-            font-size: 30px;
-        }
+       .emoji {
+         font-size: 30px;
+       }
 
-        .badge {
-            position: absolute;
-            right: -25px;
-            background-color: rgb(19, 91, 158);
-            color: white;
-            font-size: 10px;
-            padding: 2px 6px;
-            border-radius: 12px;
-            font-weight: bold;
-        }
+       .badge {
+         position: absolute;
+         right: -25px;
+         background-color: rgb(19, 91, 158);
+         color: white;
+         font-size: 10px;
+         padding: 2px 6px;
+         border-radius: 12px;
+         font-weight: bold;
+       }
 
-        .label {
-            margin-top: 6px;
-            font-size: 14px;
-            color: #333;
-        }
+       .label {
+         margin-top: 6px;
+         font-size: 14px;
+         color: #333;
+       }
 
-        .tab.active .label {
-            font-weight: bold;
-            border-bottom: 3px solid #333;
-        }
+       .tab.active .label {
+         font-weight: bold;
+         border-bottom: 3px solid #333;
+       }
+        
+       .popular-homes-section h3 {
+         font-size: 1.2rem;
+         margin-bottom: 1rem;
+         padding-left: 20px;
+         ;
+       }
 
-        .popular-homes-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            padding-left: 20px;;
-        }
+       .homes-slider {
+         display: flex;
+         overflow-x: auto;
+         gap: 1rem;
+         scroll-snap-type: x mandatory;
+         scroll-behavior: smooth;
+         padding-right: 1rem;
+         padding-bottom: 1rem;
+         scrollbar-width: none;
+         -ms-overflow-style: none;
+         
+       }
 
-        .homes-slider {
-            display: flex;
-            overflow-x: auto;
-            gap: 1rem;
-            scroll-snap-type: x mandatory;
-           scroll-behavior: smooth;
-            padding-right: 1rem;
-            padding-bottom: 1rem;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
+       .homes-slider::-webkit-scrollbar {
+         display: none;
+       }
 
-        .homes-slider::-webkit-scrollbar {
-            display: none;
-        }
+       /* Home Card */
+       .home-card {
+         flex: 0 0 auto;
+          width: clamp(140px, 70vw, 250px);
+         scroll-snap-align: start;
+         font-size: 14px;
+         color: #222;
+         border-radius: 12px;
+         overflow: hidden;
+         
+         /* Fix overflow */
+         background-color: #fff;
+         /* Optional: Makes card more visible */
+       }
 
-        /* Home Card */
-        .home-card {
-            flex: 0 0 auto;
-            width: 200px;
-            scroll-snap-align: start;
-            font-size: 14px;
-            color: #222;
-            border-radius: 12px;
-            overflow: hidden;
-            /* Fix overflow */
-            background-color: #fff;
-            /* Optional: Makes card more visible */
-        }
+       .home-card-first {
+         padding-left: 20px;
+       }
 
-        .home-card-first {
-            padding-left: 20px;
-        }
+       .img-wrapper {
+         position: relative;
+         width: 100%;
+         height: 180px;
+         overflow: hidden;
+         border-radius: 12px;
+       }
 
-        .img-wrapper {
-            position: relative;
-            width: 100%;
-            height: 180px;
-            overflow: hidden;
-            border-radius: 12px;
-        }
+       .img-wrapper img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         display: block;
+         border-radius: 12px;
+       }
 
-        .img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            border-radius: 12px;
-        }
+       .badge-text {
+         position: absolute;
+         top: 12px;
+         left: 10px;
+         background-color: rgba(255, 255, 255, 0.9);
+         font-size: 12px;
+         padding: 4px 10px;
+         border-radius: 999px;
+         font-weight: bold;
+       }
 
-        .badge-text {
-            position: absolute;
-            top: 12px;
-            left: 10px;
-            background-color: rgba(255, 255, 255, 0.9);
-            font-size: 12px;
-            padding: 4px 10px;
-            border-radius: 999px;
-            font-weight: bold;
-        }
+       .heart {
+         position: absolute;
+         top: 5px;
+         right: 12px;
+         background-color: rgb(128,128,128,0);
+         border:none;
+         font-size: 40px;
+         color: rgb(255, 255, 255);
+         cursor: pointer;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         backdrop-filter:blur(4px)
 
-        .heart {
-            position: absolute;
-            top: 3px;
-            right: 20px;
-            background: transparent;
-            border: none;
-            font-size: 40px;
-            color: rgb(255, 255, 255);
-            /* grey transparent inside */
-            /* -webkit-text-stroke: 1.5px white; */
-            /* white border */
-            cursor: pointer;
-        }
+       }
 
-        /* Card text */
-        .home-card h4 {
-            font-size: 10px;
-            margin: 0.5rem 0 0.2rem;
-        }
+       /* Card text */
+       .home-card h4 {
+         font-size: 10px;
+         margin: 0.5rem 0 0.2rem;
+       }
 
-        .home-card p {
-            margin: 0;
-            color: #717171;
-            font-size: 9px;
-        }
+       .home-card p {
+         margin: 0;
+         color: #717171;
+         font-size: 9px;
+       }
 
 
-        .bottom-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            display: flex;
-            justify-content: space-around;
-            padding: 0.5rem 0;
-            box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-        }
+       .bottom-bar {
+         position: fixed;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         background: white;
+         display: flex;
+         justify-content: space-around;
+         padding: 0.5rem 0;
+         box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+         z-index: 999;
+       }
 
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 0.75rem;
-            color: #717171;
-            cursor: pointer;
-        }
+       .nav-item {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         font-size: 0.75rem;
+         color: #717171;
+         cursor: pointer;
+       }
 
-        .nav-item i {
-            font-size: 1.3rem;
-            margin-bottom: 0.2rem;
-        }
+       .nav-item i {
+         font-size: 1.3rem;
+         margin-bottom: 0.2rem;
+       }
 
-        .nav-item.active {
-            color: #e41d56;
-        }
+       .nav-item.active {
+         color: #e41d56;
+       }
 
-        .nav-item.active i {
-            color: #e41d56;
-        }
+       .nav-item.active i {
+         color: #e41d56;
+       }
 
-      `
+       /* july 25 */
+
+       @media (max-width: 743px) {
+         .homes-slider {
+           gap: 0.75rem;
+           padding-right: 0.5rem;
+         }
+
+         .home-slider>.card {
+           width: calc(100vw -2rem);
+           max-width: 100%;
+         }
+
+       }

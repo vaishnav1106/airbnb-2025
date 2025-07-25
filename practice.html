@@ -1,346 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Popular Homes</title>
-    <style>
-        body {
-            background-color: rgba(230, 227, 227, 0.466);
-            margin: 0;
-            font-family: sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Card Slider</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        @media (max-width: 743px) {
-            body {
-                background-color: rgba(255, 255, 255, 0.466);
-            }
-        }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+    }
 
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 15px 0 0 0;
-        }
+    .popular-homes-section h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      padding-left: 20px;
+    }
 
-        .search-wrapper {
-            width: 100%;
-            max-width: 500px;
-            margin: 0 16px;
-            display: flex;
-            justify-content: center;
-            background-color: white;
-            border-radius: 30px;
-            padding: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
+    .homes-slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      scroll-behavior: smooth;
+      padding-right: 2rem;
+      padding-bottom: 1rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      flex-shrink: 3;
+    }
 
-        .search-button {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 20px;
-            font-size: 14px;
-            border: none;
-            border-radius: 30px;
-            background-color: white;
-            cursor: pointer;
-        }
+    /* .homes-slider::-webkit-scrollbar {
+      display: none;
+    } */
 
-        .search-button i {
-            margin-right: 8px;
-            font-size: 14px;
-            color: black;
-        }
+    /* Home Card */
+    .home-card {
+      flex: 0 0 auto;
+      width: 200px;
+      scroll-snap-align: start;
+      font-size: 14px;
+      color: #222;
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: #fff;
+    }
 
-        .menu-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            padding: 20px 60px 0px 60px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    .home-card-first {
+      padding-left: 20px;
+    }
 
-        .tab {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
+    .img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      border-radius: 12px;
+    }
 
-        .tab:hover {
-            transform: scale(1.05);
-        }
+    .img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+    }
 
-        .icon-wrapper {
-            position: relative;
-            font-size: 28px;
-        }
+    .badge-text {
+      position: absolute;
+      top: 12px;
+      left: 10px;
+      background-color: rgba(255, 255, 255, 0.9);
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: bold;
+    }
 
-        .emoji {
-            font-size: 30px;
-        }
+    /* Heart icon styling */
+    .heart {
+      position: absolute;
+      top: 5px;
+      right: 12px;
+      font-size: 30px;
+      background-color: rgba(128, 128, 128, 0);
+      border-radius: 100px;
+      padding: 0px;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+    }
 
-        .badge {
-            position: absolute;
-            right: -25px;
-            background-color: rgb(19, 91, 158);
-            color: white;
-            font-size: 10px;
-            padding: 2px 6px;
-            border-radius: 12px;
-            font-weight: bold;
-        }
+    /* Card text */
+    .home-card h4 {
+      font-size: 10px;
+      margin: 0.5rem 0 0.2rem;
+      padding: 0 10px;
+    }
 
-        .label {
-            margin-top: 6px;
-            font-size: 14px;
-            color: #333;
-        }
+    .home-card p {
+      margin: 0;
+      color: #717171;
+      font-size: 9px;
+      padding: 0 10px 10px;
+    }
 
-        .tab.active .label {
-            font-weight: bold;
-            border-bottom: 3px solid #333;
-        }
+    /* Responsive scaling for screens below 743px */
+    @media (max-width: 743px) {
+      .home-card {
+        width: 200px;
+      }
 
-        .popular-homes-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            padding-left: 20px;;
-        }
+      .img-wrapper {
+        height: 200px;
+      }
 
-        .homes-slider {
-            display: flex;
-            overflow-x: auto;
-            gap: 1rem;
-            scroll-snap-type: x mandatory;
-           scroll-behavior: smooth;
-            padding-right: 1rem;
-            padding-bottom: 1rem;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
+      .home-card h4 {
+        font-size: 9px;
+      }
 
-        .homes-slider::-webkit-scrollbar {
-            display: none;
-        }
+      .home-card p {
+        font-size: 8px;
+      }
 
-        /* Home Card */
-        .home-card {
-            flex: 0 0 auto;
-            width: 200px;
-            scroll-snap-align: start;
-            font-size: 14px;
-            color: #222;
-            border-radius: 12px;
-            overflow: hidden;
-            /* Fix overflow */
-            background-color: #fff;
-            /* Optional: Makes card more visible */
-        }
+      .badge-text {
+        font-size: 10px;
+        padding: 3px 8px;
+      }
 
-        .home-card-first {
-            padding-left: 20px;
-        }
+      .heart {
+        font-size: 22px;
+        top: 4px;
+        right: 8px;
+      }
 
-        .img-wrapper {
-            position: relative;
-            width: 100%;
-            height: 180px;
-            overflow: hidden;
-            border-radius: 12px;
-        }
+      .popular-homes-section h3 {
+        font-size: 1rem;
+        padding-left: 16px;
+      }
 
-        .img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            border-radius: 12px;
-        }
+      .home-card-first {
+        padding-left: 16px;
+      }
 
-        .badge-text {
-            position: absolute;
-            top: 12px;
-            left: 10px;
-            background-color: rgba(255, 255, 255, 0.9);
-            font-size: 12px;
-            padding: 4px 10px;
-            border-radius: 999px;
-            font-weight: bold;
-        }
-
-        .heart {
-            position: absolute;
-            top: 3px;
-            right: 20px;
-            background: transparent;
-            border: none;
-            font-size: 40px;
-            color: rgb(255, 255, 255);
-            /* grey transparent inside */
-            /* -webkit-text-stroke: 1.5px white; */
-            /* white border */
-            cursor: pointer;
-        }
-
-        /* Card text */
-        .home-card h4 {
-            font-size: 10px;
-            margin: 0.5rem 0 0.2rem;
-        }
-
-        .home-card p {
-            margin: 0;
-            color: #717171;
-            font-size: 9px;
-        }
-
-
-        .bottom-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            display: flex;
-            justify-content: space-around;
-            padding: 0.5rem 0;
-            box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-        }
-
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 0.75rem;
-            color: #717171;
-            cursor: pointer;
-        }
-
-        .nav-item i {
-            font-size: 1.3rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .nav-item.active {
-            color: #e41d56;
-        }
-
-        .nav-item.active i {
-            color: #e41d56;
-        }
-
-        /* ✅ NEW: Responsive slider cards */
-        @media (max-width: 500px) {
-            .home-card {
-                flex: 0 0 160px;
-            }
-
-            .img-wrapper {
-                height: 150px;
-            }
-        }
-    </style>
+      .homes-slider {
+        gap: 0.8rem;
+        padding-right: 0.5rem;
+        padding-bottom: 0.8rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-    <section class="popular-homes-section">
-        <h3>Place to stay in Thrissur ></h3>
-        <div class="homes-slider">
-            <!-- Card 1 -->
-            <div class="home-card home-card-first">
-                <div class="img-wrapper">
-                    <span class="badge-text">Guest favourite</span>
-                    <img src="img/img1f.avif" alt="Home 1" />
-                    <button class="heart">&#9825;</button>
-                </div>
-                <h4>Home in Thrissur</h4>
-                <p>₹13,075 for 2 nights· ★5.0</p>
-            </div>
-            <!-- Card 2 -->
-            <div class="home-card">
-                <div class="img-wrapper">
-                    <span class="badge-text">Guest favourite</span>
-                    <img src="img/img2f.avif" alt="Home 2" />
-                    <button class="heart">&#9825;</button>
-                </div>
-                <h4>Home in Thrissur</h4>
-                <p>₹4,109 for 2 nights.★5.0</p>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="home-card">
-                <div class="img-wrapper">
-                    <span class="badge-text">Guest favourite</span>
-                    <img src="img/img3f.avif" alt="Home 3" />
-                    <button class="heart">&#9825;</button>
-                </div>
-                <h4>Bungalow in Puthenchira></h4>
-                <p>₹4,109 for 2 nights.★5.0</p>
-            </div>
-            <!-- Card 4 -->
-            <div class="home-card">
-                <div class="img-wrapper">
-                    <span class="badge-text">Guest favourite</span>
-                    <img src="img/img4f.avif" alt="Home 4 " />
-                    <button class="heart">&#9825;</button>
-                </div>
-                <h4>Home in Thrissur</h4>
-                <p>₹4,565 for 2 nights.★5.0</p>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="home-card">
-                <div class="img-wrapper">
-                    <span class="badge-text">Guest favourite</span>
-                    <img src="img/img5f.avif" alt="Home 5" />
-                    <button class="heart">&#9825;</button>
-                </div>
-                <h4>Flat in Thrissur</h4>
-                <p>₹6562 for 2 nights.★4.85</p>
-            </div>
-            <!-- Card 6 -->
-            <div class="home-card">
-                <div class="img-wrapper">
-                    <span class="badge-text">Guest favourite</span>
-                    <img src="img/img6f.avif" alt="Home 6" />
-                    <button class="heart">&#9825;</button>
-                </div>
-                <h4>Home in Thrissur</h4>
-                <p>₹9700 for 2 nights.★4.97</p>
-            </div>
-            <!-- Card 7 -->
-            <div class="home-card">
-                <div class="img-wrapper">
-                    <span class="badge-text">Guest favourite</span>
-                    <img src="img/img7f.avif" alt="Home 7" />
-                    <button class="heart">&#9825;</button>
-                </div>
-                <h4>Home in Thrissur</h4>
-                <p>₹14379 for 2 nights.★4.92</p>
-            </div>
-
-            <!-- Card 8 -->
-            <div class="home-card">
-                <div class="img-wrapper">
-                    <span class="badge-text">Guest favourite</span>
-                    <img src="img/img8f.avif" alt="Home 8" />
-                    <button class="heart">&#9825;</button>
-                </div>
-                <h4>Flat in Thrissur</h4>
-                <p>₹5022 for 2 nights.★4.94</p>
-            </div>
+  <section class="popular-homes-section">
+    <h3>Place to stay in Thrissur ></h3>
+    <div class="homes-slider">
+      <!-- Card 1 -->
+      <div class="home-card home-card-first">
+        <div class="img-wrapper">
+          <span class="badge-text">Guest favourite</span>
+          <img src="img/img1f.avif" alt="Home 1" />
+          <button class="heart">&#9825;</button>
         </div>
-    </section>
+        <h4>Home in Thrissur</h4>
+        <p>₹13,075 for 2 nights · ★5.0</p>
+      </div>
 
+      <!-- Card 2 -->
+      <div class="home-card">
+        <div class="img-wrapper">
+          <span class="badge-text">Guest favourite</span>
+          <img src="img/img2f.avif" alt="Home 2" />
+          <button class="heart">&#9825;</button>
+        </div>
+        <h4>Home in Thrissur</h4>
+        <p>₹4,109 for 2 nights · ★5.0</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="home-card">
+        <div class="img-wrapper">
+          <span class="badge-text">Guest favourite</span>
+          <img src="img/img3f.avif" alt="Home 3" />
+          <button class="heart">&#9825;</button>
+        </div>
+        <h4>Bungalow in Puthenchira</h4>
+        <p>₹4,109 for 2 nights · ★5.0</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="home-card">
+        <div class="img-wrapper">
+          <span class="badge-text">Guest favourite</span>
+          <img src="img/img4f.avif" alt="Home 4" />
+          <button class="heart">&#9825;</button>
+        </div>
+        <h4>Home in Thrissur</h4>
+        <p>₹4,565 for 2 nights · ★5.0</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="home-card">
+        <div class="img-wrapper">
+          <span class="badge-text">Guest favourite</span>
+          <img src="img/img5f.avif" alt="Home 5" />
+          <button class="heart">&#9825;</button>
+        </div>
+        <h4>Flat in Thrissur</h4>
+        <p>₹6,562 for 2 nights · ★4.85</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="home-card">
+        <div class="img-wrapper">
+          <span class="badge-text">Guest favourite</span>
+          <img src="img/img6f.avif" alt="Home 6" />
+          <button class="heart">&#9825;</button>
+        </div>
+        <h4>Home in Thrissur</h4>
+        <p>₹9,700 for 2 nights · ★4.97</p>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="home-card">
+        <div class="img-wrapper">
+          <span class="badge-text">Guest favourite</span>
+          <img src="img/img7f.avif" alt="Home 7" />
+          <button class="heart">&#9825;</button>
+        </div>
+        <h4>Home in Thrissur</h4>
+        <p>₹14,379 for 2 nights · ★4.92</p>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="home-card">
+        <div class="img-wrapper">
+          <span class="badge-text">Guest favourite</span>
+          <img src="img/img8f.avif" alt="Home 8" />
+          <button class="heart">&#9825;</button>
+        </div>
+        <h4>Flat in Thrissur</h4>
+        <p>₹5,022 for 2 nights · ★4.94</p>
+      </div>
+    </div>
+  </section>
 </body>
-
 </html>
