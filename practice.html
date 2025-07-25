@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Responsive Card Slider</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Footer</title>
   <style>
     * {
       box-sizing: border-box;
@@ -12,244 +12,154 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+    }
+
+    footer {
       background-color: #f7f7f7;
+      color: #333;
+      padding: 40px 20px 10px;
     }
 
-    .popular-homes-section h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      padding-left: 20px;
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
     }
 
-    .homes-slider {
-      display: flex;
-      overflow-x: auto;
-      gap: 1rem;
-      scroll-behavior: smooth;
-      padding-right: 2rem;
-      padding-bottom: 1rem;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      flex-shrink: 3;
-    }
-
-    /* .homes-slider::-webkit-scrollbar {
-      display: none;
-    } */
-
-    /* Home Card */
-    .home-card {
-      flex: 0 0 auto;
-      width: 200px;
-      scroll-snap-align: start;
-      font-size: 14px;
-      color: #222;
-      border-radius: 12px;
-      overflow: hidden;
-      background-color: #fff;
-    }
-
-    .home-card-first {
-      padding-left: 20px;
-    }
-
-    .img-wrapper {
-      position: relative;
-      width: 100%;
-      height: 180px;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-
-    .img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      border-radius: 12px;
-    }
-
-    .badge-text {
-      position: absolute;
-      top: 12px;
-      left: 10px;
-      background-color: rgba(255, 255, 255, 0.9);
-      font-size: 12px;
-      padding: 4px 10px;
-      border-radius: 999px;
+    .footer-logo {
+      font-size: 1.5rem;
       font-weight: bold;
+      margin-bottom: 1rem;
     }
 
-    /* Heart icon styling */
-    .heart {
-      position: absolute;
-      top: 5px;
-      right: 12px;
-      font-size: 30px;
-      background-color: rgba(128, 128, 128, 0);
-      border-radius: 100px;
-      padding: 0px;
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0);
+    .footer-section h4 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section ul li a {
+      text-decoration: none;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .footer-section ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .social-icons {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      backdrop-filter: blur(4px);
+      gap: 10px;
+      margin-top: 1rem;
     }
 
-    /* Card text */
-    .home-card h4 {
-      font-size: 10px;
-      margin: 0.5rem 0 0.2rem;
-      padding: 0 10px;
+    .social-icons a {
+      text-decoration: none;
+      color: #555;
+      font-size: 1.2rem;
+      display: inline-block;
     }
 
-    .home-card p {
-      margin: 0;
-      color: #717171;
-      font-size: 9px;
-      padding: 0 10px 10px;
+    .language-currency {
+      display: flex;
+      gap: 10px;
+      margin-top: 1rem;
+      font-size: 0.9rem;
     }
 
-    /* Responsive scaling for screens below 743px */
-    @media (max-width: 743px) {
-      .home-card {
-        width: 200px;
-      }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 0.85rem;
+      color: #777;
+      border-top: 1px solid #ddd;
+      margin-top: 30px;
+    }
 
-      .img-wrapper {
-        height: 200px;
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      .footer-container {
+        text-align: center;
       }
-
-      .home-card h4 {
-        font-size: 9px;
-      }
-
-      .home-card p {
-        font-size: 8px;
-      }
-
-      .badge-text {
-        font-size: 10px;
-        padding: 3px 8px;
-      }
-
-      .heart {
-        font-size: 22px;
-        top: 4px;
-        right: 8px;
-      }
-
-      .popular-homes-section h3 {
-        font-size: 1rem;
-        padding-left: 16px;
-      }
-
-      .home-card-first {
-        padding-left: 16px;
-      }
-
-      .homes-slider {
-        gap: 0.8rem;
-        padding-right: 0.5rem;
-        padding-bottom: 0.8rem;
+      .social-icons,
+      .language-currency {
+        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
-  <section class="popular-homes-section">
-    <h3>Place to stay in Thrissur ></h3>
-    <div class="homes-slider">
-      <!-- Card 1 -->
-      <div class="home-card home-card-first">
-        <div class="img-wrapper">
-          <span class="badge-text">Guest favourite</span>
-          <img src="img/img1f.avif" alt="Home 1" />
-          <button class="heart">&#9825;</button>
-        </div>
-        <h4>Home in Thrissur</h4>
-        <p>₹13,075 for 2 nights · ★5.0</p>
-      </div>
 
-      <!-- Card 2 -->
-      <div class="home-card">
-        <div class="img-wrapper">
-          <span class="badge-text">Guest favourite</span>
-          <img src="img/img2f.avif" alt="Home 2" />
-          <button class="heart">&#9825;</button>
-        </div>
-        <h4>Home in Thrissur</h4>
-        <p>₹4,109 for 2 nights · ★5.0</p>
+<footer>
+  <div class="footer-container">
+    <!-- Brand and Social -->
+    <div class="footer-section">
+      <div class="footer-logo">Munchi Mist</div>
+      <p>Delicious meals made with love. Order online or offline now.</p>
+      <div class="social-icons">
+        <a href="#">🌐</a>
+        <a href="#">📘</a>
+        <a href="#">🐦</a>
+        <a href="#">📸</a>
       </div>
-
-      <!-- Card 3 -->
-      <div class="home-card">
-        <div class="img-wrapper">
-          <span class="badge-text">Guest favourite</span>
-          <img src="img/img3f.avif" alt="Home 3" />
-          <button class="heart">&#9825;</button>
-        </div>
-        <h4>Bungalow in Puthenchira</h4>
-        <p>₹4,109 for 2 nights · ★5.0</p>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="home-card">
-        <div class="img-wrapper">
-          <span class="badge-text">Guest favourite</span>
-          <img src="img/img4f.avif" alt="Home 4" />
-          <button class="heart">&#9825;</button>
-        </div>
-        <h4>Home in Thrissur</h4>
-        <p>₹4,565 for 2 nights · ★5.0</p>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="home-card">
-        <div class="img-wrapper">
-          <span class="badge-text">Guest favourite</span>
-          <img src="img/img5f.avif" alt="Home 5" />
-          <button class="heart">&#9825;</button>
-        </div>
-        <h4>Flat in Thrissur</h4>
-        <p>₹6,562 for 2 nights · ★4.85</p>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="home-card">
-        <div class="img-wrapper">
-          <span class="badge-text">Guest favourite</span>
-          <img src="img/img6f.avif" alt="Home 6" />
-          <button class="heart">&#9825;</button>
-        </div>
-        <h4>Home in Thrissur</h4>
-        <p>₹9,700 for 2 nights · ★4.97</p>
-      </div>
-
-      <!-- Card 7 -->
-      <div class="home-card">
-        <div class="img-wrapper">
-          <span class="badge-text">Guest favourite</span>
-          <img src="img/img7f.avif" alt="Home 7" />
-          <button class="heart">&#9825;</button>
-        </div>
-        <h4>Home in Thrissur</h4>
-        <p>₹14,379 for 2 nights · ★4.92</p>
-      </div>
-
-      <!-- Card 8 -->
-      <div class="home-card">
-        <div class="img-wrapper">
-          <span class="badge-text">Guest favourite</span>
-          <img src="img/img8f.avif" alt="Home 8" />
-          <button class="heart">&#9825;</button>
-        </div>
-        <h4>Flat in Thrissur</h4>
-        <p>₹5,022 for 2 nights · ★4.94</p>
+      <div class="language-currency">
+        <span>🌍 English (IN)</span>
+        <span>₹ INR</span>
       </div>
     </div>
-  </section>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Top Categories -->
+    <div class="footer-section">
+      <h4>Top Categories</h4>
+      <ul>
+        <li><a href="#">Momoz</a></li>
+        <li><a href="#">Payasam</a></li>
+        <li><a href="#">Pizza</a></li>
+        <li><a href="#">Shakes</a></li>
+        <li><a href="#">Home-style meals</a></li>
+      </ul>
+    </div>
+
+    <!-- Top Locations -->
+    <div class="footer-section">
+      <h4>Top Locations</h4>
+      <ul>
+        <li><a href="#">Thrissur</a></li>
+        <li><a href="#">Ernakulam</a></li>
+        <li><a href="#">Kochi</a></li>
+        <li><a href="#">Palakkad</a></li>
+        <li><a href="#">Trivandrum</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Munchi Mist. All rights reserved.
+  </div>
+</footer>
+
 </body>
 </html>
