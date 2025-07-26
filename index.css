@@ -4,11 +4,6 @@
          font-family: sans-serif;
        }
 
-       @media (max-width: 743px) {
-         body {
-           background-color: rgb(255, 255, 255);
-         }
-       }
 
        .hero {
          display: flex;
@@ -105,7 +100,7 @@
          margin-bottom: 1rem;
          padding-left: 20px;
          font-family: 'roboto', sans-serif;
-         color:#2b2a2a;
+         color: #2b2a2a;
        }
 
        .homes-slider {
@@ -131,11 +126,10 @@
          font-size: 14px;
          color: #222;
          border-radius: 12px;
-         flex-wrap:wrap;
+         flex-wrap: wrap;
          overflow: hidden;
          /* Fix overflow */
          background-color: #fff;
-         /* Optional: Makes card more visible */
        }
 
        .home-card-first {
@@ -182,14 +176,14 @@
          fill-opacity: 0.5;
          font-size: 40px;
        }
-    
+
 
        /* Card text */
        .home-card h4 {
          font-size: 14px;
          margin: 0.5rem 0 0.2rem;
          text-align: left;
-         color:#222222
+         color: #222222
        }
 
        .home-card p {
@@ -198,6 +192,8 @@
          font-size: 12px;
        }
 
+
+       /* floating nav bottom */
        .bottom-bar {
          position: fixed;
          bottom: 0;
@@ -233,26 +229,21 @@
          color: #e41d56;
        }
 
-       /* july 25 */
-      
-       .footer{
-        margin-top:30px
 
+       /* footer */
+       footer{
+        background-color: #f7f7f7;
+        padding:60px 20px;
+        font-family: 'roboto',Arial;
+        color:#272626;
+        font-size:14px;
        }
-       .footer-content{
-        margin:50px 0;
-       }
-       .footer-content h2{
-        font-family: 'roboto';
-        font-size: 22px;
-        padding-left :20px;
-        margin-bottom: 20px;
-        color:#302e2e;
-        
-       }
-       
 
-       /* @media (max-width: 743px) {
+       @media (max-width: 743px) {
+
+        body {
+           background-color: rgb(255, 255, 255);
+         }
          .homes-slider {
            gap: 0.75rem;
            padding-right: 0.5rem;
@@ -263,4 +254,4 @@
            max-width: 100%;
          }
 
-       } */
+       }
