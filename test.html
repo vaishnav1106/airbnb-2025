@@ -17,6 +17,41 @@ body {
   font-family: sans-serif;
 
 }
+/* ////////////////////////////////// */
+.search {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.search-wrapper {
+  width: 100%;
+  max-width: 750px;
+}
+
+.search-button {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  background-color: white;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.search-button:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+
+/* /////////////////////////////////// */
 
 .popular-homes-section {
   padding: 1rem 0;
@@ -128,7 +163,14 @@ body {
 </head>
 
 <body>
-  
+  <div class="search">
+    <div class="search-wrapper">
+      <button class="search-button">
+        <i class="fas fa-search"></i>
+        Start your search
+      </button>
+    </div>
+  </div>
 <section class="popular-homes-section">
     <h3>Popular homes in Bengaluru ></h3>
     <div class="homes-slider">
