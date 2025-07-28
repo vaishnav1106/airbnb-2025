@@ -266,7 +266,7 @@ footer {
 
 .footer-section {
   max-width: 1200px;
-  margin: auto;
+  margin:0 ;
 }
 
 .footer-section h2 {
@@ -320,10 +320,13 @@ footer {
 }
 
 hr {
+  border: none;                /* Remove all borders */
+  border-top: 1px solid #ccc;  /* Only top border shows */
   margin: 10px 0;
-  border: none;
-  border-top: 1px solid #ccc;
+  width: 100%;                 /* Ensure it spans full width */
+  height: 1px;                 /* Optional: keeps it thin */
 }
+
 
 .footer-columns {
   display: flex;
@@ -343,12 +346,17 @@ hr {
 .footer-column ul {
   list-style: none;
   padding: 0;
+  max-width:600px;
+  width: 100%;
 }
 
 .footer-column li {
+  font-size: 16px;
   margin-bottom: 8px;
   color: #333;
   line-height: 30px;
+   max-width:600px;
+  width: 100%;
 }
 
 .footer-base {
