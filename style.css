@@ -1,134 +1,439 @@
-        * {
-            margin: 0;
-        }
-
-        .body {
-            font-family: 'roboto';
-            margin: 0;
-        }
-
-        .popular-homes-section {
-
-            margin: 0;
-        }
-
-        .popular-homes-section h3 {
-            padding: 20px;
-            font-family: 'roboto';
-        }
-
-        .homes-slider {
-            display: flex;
-            gap: 1rem;
-            padding-left: 20px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-        }
-
-        .home-card {
-            position: relative;
-            font-family: 'roboto';
-            flex: 0 0 calc(51% - 1.8rem);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .img-wrapper {
-            aspect-ratio: 4 / 3;
-            /* ensures responsive image height */
-            overflow: hidden;
-            border-radius: 12px 12px;
-             max-height: 100em!important;
-        }
-
-        .img-wrapper img {
-            width: 100%;
-
-            object-fit: cover;
-            display: block;
-        }
-
-        .badge-text {
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.863);
-            color: rgb(0, 0, 0);
-            font-size: 12px;
-            padding: 5px 9px;
-            border-radius: 15px;
-            top: 15px;
-            left: 10px;
-            width: 65px;
-        }
-
-        .heart {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: none;
-            border: none;
-            padding: 0;
-            cursor:pointer;
-            z-index: 2;
-        }
-
-        .heart img {
-            width: 20px;
-            height: 20px;
-        }
-
-        .home-card h4 {
-            font-family: 'roboto';
-            font-size: 14px;
-            margin: 0.5rem 0 0.2rem;
-            text-align: left;
-            color: #222222;
-        }
-
-        .home-card p {
-            font-family: 'roboto';
-            margin: 0;
-            padding-bottom: 10px;
-            color: #717171;
-            font-size: 12px;
-        }
-
-        .homes-slider {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-
-
-
-
-        /* code for other screen size */
-        /* Tablet and Small Desktops */
-@media (min-width: 600px) {
-  .home-card {
-    flex: 0 0 45%;
-  }
+/* /* *{
+    outline: 2px solid red;
+} */
+body {
+    padding: 0;
+    margin: 0;
+    padding: 14px 0 0px;
 }
 
-/* Medium Desktops */
-@media (min-width: 768px) {
-  .home-card {
-    flex: 0 0 30%;
-  }
+.search {
+    margin: 0 20px;
+    padding: 5px 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2em;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
 }
 
-/* Larger Screens */
-@media (min-width: 1024px) {
-  .home-card {
-    flex: 0 0 28%;
-  }
+.search-button {
+    font-family: 'Roboto';
+    font-size: .88rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    padding: 0 .3em;
+    letter-spacing: .1px;
 }
 
-/* For peeking effect on small screens */
-@media (max-width: 599px) {
-  .homes-slider {
-    padding-right: 1.5rem;
-  }
-  .home-card {
-    flex: 0 0 calc(100% - 4rem);
-  }
+
+.search-button i {
+    font-size: 11px;
+}
+
+/* nav */
+.menu {
+    padding: 16px 64px 18px;
+    display: flex;
+    height: 3.5em;
+    justify-content: center !important;
+    align-items: center;
+    gap: 55px;
+    font-family: 'roboto';
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.menu-tab {
+    width: 100px;
+    height: 100%;
+    max-height: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.menu-tab p {
+
+    margin: 0px;
+    font-size: 12px;
+    color: #6a6a6a;
+}
+
+.img {
+    padding: 0;
+    margin: 0;
+    width: 38px;
+    height: 38px;
+}
+
+.icon-wrapper {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    /* small gap between icon and label if needed */
+}
+
+.badge {
+    position: absolute;
+    background-color: rgb(39, 100, 190);
+    color: white;
+    border-radius: 10px;
+    padding: 3px 6px;
+    font-size: 8px;
+}
+
+/* main */
+
+.popular-home-section h3 {
+    font-family: 'roboto';
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin: 0;
+}
+
+/* Slider container */
+.homes-slider {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 1rem;
+    -webkit-overflow-scrolling: touch;
+    font-family: "roboto";
+}
+
+.homes-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Card */
+.home-card {
+    flex: 1 0 calc(51% - 1rem);
+    /* Adjust as per layout */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    font-family: 'roboto';
+}
+
+.img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3.6;
+    /* Maintains responsive height */
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.img-wrapper img.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Badge */
+.badge-text {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    background-color: white;
+    color: rgb(22, 21, 21);
+    padding: 0.3em .6em;
+    border-radius: 12px;
+    text-align: left;
+    white-space: normal;
+    line-height: 1.2;
+    font-size: clamp(0.65rem, 4vw, 0.75rem);
+    /* Responsive font */
+    max-width: 5.5em;
+    /* Controls width nicely */
+}
+
+
+/* Heart Button */
+button.heart {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+button.heart img.heart {
+    width: 24px;
+    height: 24px;
+}
+
+/* Title & Text */
+.home-card h4 {
+    font-size: .8rem;
+    margin: 0;
+    font-weight: 500
+}
+
+.home-card p {
+    font-size: 0.75rem;
+    color: #555;
+    margin: 0;
+}
+
+.angle {
+    width: 2vw;
+    height: 2vh;
+}
+
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding: 0px 0 5px 0;
+  font-weight: 600;
+  border: none;
+  background: none;
+}
+
+.tab:hover {
+  transform: scale(1.05);
+}
+
+.tab.active {
+  color: #000;
+
+}
+
+/* .tab.active .label {
+  font-weight: bold;
+  border-bottom: 3px solid #333;
+} */
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  right: 1px;
+  width: 100%;
+  height: 3px;
+  background-color: #000000;
+  border-radius: 2px;
+  padding-bottom: 1px;
+}
+
+/* Floating menu bottom */
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5em 0;
+    box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.bar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'roboto';
+    font-size: 0.8rem;
+    color: #717171;
+    cursor: pointer;
+}
+
+.bar-item i {
+    font-size: 1.3em;
+    margin-bottom: 0.2rem;
+}
+
+.bar-item.active {
+    color: #e41d56;
+}
+
+.bar-item.active i {
+    color: #e41d56;
+}
+
+/* footer */
+footer {
+    background-color: #f7f7f7;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    font-family: 'roboto', Arial, sans-serif;
+    color: #222;
+    font-size: 14px;
+}
+
+.footer-section {
+    max-width: 1200px;
+    margin: 0;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-tabs {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    max-width: 350px;
+    width: 100%;
+    gap: 80px;
+}
+
+.footer-links ul {
+    max-width: 150px;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-link li {
+    margin-bottom: 10px;
+}
+
+.footer-links li span {
+    color: #717171;
+    font-size: 1em;
+}
+
+.show-more {
+    color: #040505;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.show-more-icon {
+    width: 12px;
+    height: 15px;
+    padding-top: 5px;
+}
+
+hr{
+    border:none;
+    border-top:1px solid #ccc;
+    margin:10px 0;
+    width:100%;
+    height:1px;
+}
+
+.footer-column{
+    min-width:100px;
+}
+.footer-column h4{
+    font-family:'roboto';
+    margin-bottom:10px;
+    font-size:14px;
+}
+.footer-column ul{
+    list-style:none;
+    padding:0;
+    max-width:600px;
+    width:100%;
+}
+
+.footer-column li{
+    font-size: 16px;
+    margin-bottom:8px;
+    color:#333;
+    line-height:30px;
+    max-width:600px;
+    width:100%;
+}
+
+.footer-base{
+    border-top:1px solid #ddd;
+    font-size:0.875;
+    color:#555;
+}
+
+.footer-base-top{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    margin-bottom:1rem;
+    padding-top:30px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0.75rem;
+}
+
+.globe-icon{
+    font-family:'roboto';
+    color:black;
+    font-size:14px;
+}
+
+.footer-language span{
+    font-family:'roboto';
+    margin-right:1rem;
+}
+.footer-social-icons{
+    display:flex;
+    gap:15px !important;
+}
+
+.footer-social-icons img{
+    width:20px;
+    cursor:pointer;
+}
+.footer-base-bottom{
+    display:flex;
+    flex-direction:column;
+    gap:0rem
+}
+.footer-link{
+    display: flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.footer-link a{
+    color:#555;
+    text-decoration: none;
+}
+
+.footer-link a:hover{
+    text-decoration:underline;
+}
+
+
+/* 🟨 Media query: Between 371px and 743px */
+@media (min-width: 371px) and (max-width: 743px) {
+    .badge-text {
+        white-space: nowrap;
+        /* Force single line */
+        max-width: 8.5em;
+    }
+
+    .badge-text br {
+        display: none;
+        /* Hide the line break */
+    }
 }
