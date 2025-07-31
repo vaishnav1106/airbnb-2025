@@ -1,15 +1,18 @@
-        *{
-            margin:0;
+        * {
+            margin: 0;
         }
-        .body{
+
+        .body {
             font-family: 'roboto';
             margin: 0;
         }
-        .popular-homes-section{
-              
-              margin:0;
+
+        .popular-homes-section {
+
+            margin: 0;
         }
-        .popular-homes-section h3{
+
+        .popular-homes-section h3 {
             padding: 20px;
             font-family: 'roboto';
         }
@@ -19,16 +22,15 @@
             gap: 1rem;
             padding-left: 20px;
             overflow-x: auto;
-            scroll-snap-type: x mandatory; 
+            scroll-snap-type: x mandatory;
         }
 
         .home-card {
+            position: relative;
             font-family: 'roboto';
-            flex: 0 0 calc(51% - 2rem);
+            flex: 0 0 calc(51% - 1.8rem);
             display: flex;
             flex-direction: column;
-            
-             
         }
 
         .img-wrapper {
@@ -36,11 +38,12 @@
             /* ensures responsive image height */
             overflow: hidden;
             border-radius: 12px 12px;
+             max-height: 100em!important;
         }
 
         .img-wrapper img {
             width: 100%;
-            height: 100%;
+
             object-fit: cover;
             display: block;
         }
@@ -57,12 +60,20 @@
             width: 65px;
         }
 
-        .heart img {
+        .heart {
             position: absolute;
-            font-size: 25px;
-            width: 21px;
-            height: 21px;
-            fill: #222222;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor:pointer;
+            z-index: 2;
+        }
+
+        .heart img {
+            width: 20px;
+            height: 20px;
         }
 
         .home-card h4 {
@@ -85,3 +96,39 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
+
+
+
+
+        /* code for other screen size */
+        /* Tablet and Small Desktops */
+@media (min-width: 600px) {
+  .home-card {
+    flex: 0 0 45%;
+  }
+}
+
+/* Medium Desktops */
+@media (min-width: 768px) {
+  .home-card {
+    flex: 0 0 30%;
+  }
+}
+
+/* Larger Screens */
+@media (min-width: 1024px) {
+  .home-card {
+    flex: 0 0 28%;
+  }
+}
+
+/* For peeking effect on small screens */
+@media (max-width: 599px) {
+  .homes-slider {
+    padding-right: 1.5rem;
+  }
+  .home-card {
+    flex: 0 0 calc(100% - 4rem);
+  }
+}

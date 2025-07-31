@@ -1,139 +1,191 @@
-/* *{
+/* /* *{
     outline: 2px solid red;
 } */
-body{
-    padding:0;
-    margin:0;
-    padding:10px 0px;
+body {
+    padding: 0;
+    margin: 0;
+    padding: 14px 0 0px;
 }
 
-.search{
-    margin:0 20px;
-    padding:10px 20px;
+.search {
+    margin: 0 20px;
+    padding: 5px 20px;
     background-color: rgb(255, 255, 255);
-    border-radius:2em;
+    border-radius: 2em;
     align-items: center;
-    box-shadow: 0 3px 6px grey;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
 }
-.search-button{
+
+.search-button {
     font-family: 'Roboto';
-    font-size:1rem;
+    font-size: .88rem;
+    font-weight:500;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:.5em;
-    /* background-color: rgb(196, 65, 65); */
-    padding:0 1em;
+    gap: .5em;
+    padding: 0 .3em;
+    letter-spacing: .1px;
 }
 
-.search-button i{
-    font-size: 14px;
+
+.search-button i {
+    font-size: 11px;
 }
+
 /* nav */
-.menu{
-padding-top:20px;    
-display: flex;
-justify-content:center !important ;
-align-items: center;
-gap: 30px;
-font-family: 'roboto';
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+.menu {
+    padding:16px 64px 18px;
+    display: flex;
+    height:3.5em;
+    justify-content: center !important;
+    align-items: center;
+    gap: 55px;
+    font-family: 'roboto';
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
 }
 
-.menu-tab{
-    width:100px;
+.menu-tab {
+    width: 100px;
     height: 100%;
+    max-height:30px;
     align-items: center;
     justify-content: center;
-    text-align: center;  
+    text-align: center;
+    margin-bottom: 2px;
 }
 
-.badge{
-    position: relative;
-    background-color: rgb(39, 100, 190);
-    border-radius: 10px;
-    padding:3px 5px;
+.menu-tab p{
+   
+    margin:0px;
     font-size:12px;
-    top:-20px !important;
-    left:10px;
+    color:#6a6a6a;
+}
+.img{
+    padding:0;
+    margin:0;
+    width: 38px;
+    height:38px;
+}
+.icon-wrapper{
+    padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px; /* small gap between icon and label if needed */
+}
+.badge {
+    position:absolute;
+    background-color: rgb(39, 100, 190);
+    color: white;
+    border-radius: 10px;
+    padding: 3px 6px;
+    font-size: 8px;
 }
 
 /* main */
-       
-        .popular-homes-section h3{
-            padding: 20px;
-            font-family: 'roboto';
-        }
 
-        .homes-slider {
-            display: flex;
-            gap: 1rem;
-            padding-left: 20px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory; 
-        }
+.popular-home-section h3 {
+  font-family:'roboto' ;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin:0;
+}
 
-        .home-card {
-            font-family: 'roboto';
-            flex: 0 0 calc(51% - 2rem);
-            display: flex;
-            flex-direction: column;
-            
-        }
+/* Slider container */
+.homes-slider {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 1rem;
+  -webkit-overflow-scrolling: touch;
+  font-family: "roboto";
+}
+.homes-slider::-webkit-scrollbar {
+  display: none;
+}
 
-        .img-wrapper {
-            aspect-ratio: 4 / 3;
-            /* ensures responsive image height */
-            overflow: hidden;
-            border-radius: 12px 12px;
-        }
+/* Card */
+.home-card {
+  flex: 1 0 calc(51% - 1rem); /* Adjust as per layout */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  font-family: 'roboto';
+}
 
-        .img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+.img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3.6; /* Maintains responsive height */
+  overflow: hidden;
+  border-radius: 12px;
+}
 
-        .badge-text {
-            position: absoluterelatic;
-            background-color: rgba(255, 255, 255, 0.863);
-            color: rgb(0, 0, 0);
-            font-size: 12px;
-            padding: 5px 9px;
-            border-radius: 15px;
-            /* top: 2px; */
-            left: 10px;
-            width: 65px;
-        }
+.img-wrapper img.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
 
-        .heart img {
-            position: absolute;
-            font-size: 25px;
-            width: 21px;
-            height: 21px;
-            fill: #222222;
-        }
+/* Badge */
+.badge-text {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background-color: white;
+  color: rgb(22, 21, 21);
+  padding: 0.3em .6em;
+  border-radius: 12px;
+  text-align: left;
+  white-space: normal;
+  line-height: 1.2;
+  font-size: clamp(0.65rem, 4vw, 0.75rem); /* Responsive font */
+  max-width: 5.5em;   /* Controls width nicely */
+}
 
-        .home-card h4 {
-            font-family: 'roboto';
-            font-size: 14px;
-            margin: 0.5rem 0 0.2rem;
-            text-align: left;
-            color: #222222;
-        }
 
-        .home-card p {
-            font-family: 'roboto';
-            margin: 0;
-            padding-bottom: 10px;
-            color: #717171;
-            font-size: 12px;
-        }
+/* Heart Button */
+button.heart {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
 
-        .homes-slider {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+button.heart img.heart {
+  width: 24px;
+  height: 24px;
+}
 
-       
+/* Title & Text */
+.home-card h4 {
+  font-size: .8rem;
+  margin: 0;
+  font-weight:500
+}
+
+.home-card p {
+  font-size: 0.75rem;
+  color: #555;
+  margin: 0;
+}
+
+/* 🟨 Media query: Between 371px and 743px */
+@media (min-width: 371px) and (max-width: 743px) {
+  .badge-text {
+    white-space: nowrap;   /* Force single line */
+    max-width: 8.5em; 
+  }
+
+  .badge-text br {
+    display: none;         /* Hide the line break */
+  }
+}
