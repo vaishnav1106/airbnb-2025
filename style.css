@@ -35,7 +35,7 @@ body {
 
 /* nav */
 .menu {
-    padding: 16px 64px 18px;
+    padding: 16px 64px 15px;
     display: flex;
     height: 3.5em;
     justify-content: center !important;
@@ -215,10 +215,10 @@ button.heart img.heart {
 
 }
 
-/* .tab.active .label {
+.tab.active .label {
   font-weight: bold;
   border-bottom: 3px solid #333;
-} */
+}
 
 .tab.active::after {
   content: "";
@@ -293,6 +293,7 @@ footer {
 .footer-tabs {
     display: flex;
     gap: 20px;
+    padding-bottom: 3px;
     border-bottom: 1px solid #ccc;
 }
 
