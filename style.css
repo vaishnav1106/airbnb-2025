@@ -7,14 +7,22 @@ body {
     padding: 14px 0 0px;
 }
 
-.search {
-    margin: 0 20px;
-    padding: 5px 12px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 2em;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+.search{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+.search {
+  top: 0;
+  margin: 0 20px;
+  padding: 5px 12px;
+  background-color: white;
+  border-radius: 2em;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
 
 .search-button {
     font-family: 'Roboto';
@@ -276,18 +284,21 @@ element.style .try {
 /* Floating menu bottom */
 
 .bottom-bar {
-    position: fixed;
-    bottom:0;
-    left:0;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    
-    padding: 0.5em  6em;
-    z-index: 999;
-    gap: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* 👈 Ensures full width */
+  background: white;
+  display: flex;
+  justify-content: center; /* 👈 Centers all items */
+  align-items: center; /* 👈 Vertical centering (optional but good) */
+  padding: 9px;
+  z-index: 999;
+  gap: 50px; /* 👈 Horizontal space *between* items */
+  box-shadow: 0 -1px 6px rgba(0,0,0,0.1);
 }
+
+
 
 .bar-item {
     display: flex;
@@ -599,9 +610,6 @@ hr {
         height:16px;
         color:white;
     }
-
-
-
 
 
     .home-card {
