@@ -198,6 +198,16 @@ button.heart img.heart {
 }
 
 
+element.style .try {
+    display: block;
+    fill: none;
+    height: 12px;
+    width: 12px;
+    stroke: currentcolor;
+    stroke-width: 5.33333;
+    overflow: visible;
+}
+
 .tab {
     display: flex;
     flex-direction: column;
