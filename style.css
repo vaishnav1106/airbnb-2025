@@ -33,6 +33,10 @@ body {
     font-size: 11px;
 }
 
+.search-bar {
+    display: none;
+}
+
 /* nav */
 .menu {
     padding: 16px calc(48px - var(--homepage-font-ratio-increase, 0) * 48px) 0;
@@ -42,7 +46,7 @@ body {
     align-items: center;
     gap: 15.1%;
     font-family: 'roboto';
-    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1); */
 }
 
 .menu-tab {
@@ -230,7 +234,7 @@ button.heart img.heart {
 }
 
 .tab.active.label {
-    
+
     border-bottom: 3px solid #333;
 }
 
@@ -268,7 +272,7 @@ button.heart img.heart {
     justify-content: space-around;
     padding: 0.5em 0;
     z-index: 999;
-    gap:20px;
+    gap: 20px;
 }
 
 .bar-item {
@@ -358,10 +362,11 @@ footer {
     gap: 5px;
 }
 
-.button{
-    font-size:14px;
-    font-weight:bold;
+.button {
+    font-size: 14px;
+    font-weight: bold;
 }
+
 .show-more-icon {
     width: 12px;
     height: 15px;
@@ -464,6 +469,10 @@ hr {
 
 /* 🟨 Media query: Between 371px and 743px */
 @media (min-width: 371px) and (max-width: 743px) {
+    .search-bar {
+        display: none;
+    }
+
     .badge-text {
         white-space: nowrap;
         /* Force single line */
@@ -476,8 +485,8 @@ hr {
     }
 
     .img {
-        width: 30px;
-        height: 28px;
+        width: 38px;
+        height: 36px;
     }
 
     .menu {
@@ -504,6 +513,85 @@ hr {
 
     .footer-links li {
         width: 6rem;
+    }
+
+}
+
+
+@media (min-width:744px) and (max-width:949px) {
+    .search {
+        display: none;
+    }
+
+    .search-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: white;
+        border-radius:50px;
+        box-shadow:5px 5px 70px 5px rgb(0,0, 0, 0.1);
+        padding:10px 20px;
+        max-width:650px;
+        margin:20px auto;
+        font-family: 'roboto';
+    }
+
+    .search-item {
+        display:flex;
+        flex-direction:column;
+        padding:0  40px 0 0px;
+        border-right:1px solid #ddd;
+
+    }
+
+    .search-item:last-child{
+        font-size:12px;
+        font-weight:600;
+        color:#888;
+        margin-bottom: 2px;
+        border-right: none;
+    }
+
+    .search-label {
+        font-size: 12px;
+        font-weight: 600;
+        color:#222;
+        margin-bottom:2px;
+        text-align:left;
+    }
+
+    .search-value{
+        font-size:14px;
+        color:#888;
+        text-align:left;
+    }
+
+    .search-buttons{
+        background-color:#ff385c;
+        border-radius: 50%;
+        border: none;
+        width:40px;
+        height:40px;
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        margin-left:20px;
+        cursor:pointer;
+        color: white;
+    }
+
+    svg {
+        width:16px;
+        height:16px;
+        color:white;
+    }
+
+
+
+
+
+    .home-card {
+        flex: 0 0 calc(23.5%);
     }
 
 }
