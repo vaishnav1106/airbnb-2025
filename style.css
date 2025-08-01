@@ -193,7 +193,7 @@ button.heart img.heart {
 }
 
 .angle {
-    width: 2vw;
+    width: 1vw;
     height: 2vh;
 }
 
@@ -266,11 +266,14 @@ button.heart img.heart {
 
 .bottom-bar {
     position: fixed;
+    bottom:0;
+    left:0;
     background: white;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 0.5em 0;
+    
+    padding: 0.5em  6em;
     z-index: 999;
     gap: 20px;
 }
@@ -282,7 +285,7 @@ button.heart img.heart {
     font-family: 'roboto';
     font-size: 0.8rem;
     color: #717171;
-    cursor: pointer;
+    cursor: pointer;width:50px;
 }
 
 .bar-item i {
