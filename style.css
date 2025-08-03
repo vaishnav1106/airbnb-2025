@@ -1,25 +1,30 @@
-*{
+/* *{
     outline: 2px solid red;
-}
+} */
 body {
     padding: 0;
     margin: 0;
     padding: 14px 0 0px;
 }
 
-.fixed-search{
-    position:fixed;
+header {
+   
+    position: sticky;
     top:0;
-    z-index: 20;
+    z-index: 1000;
+    background-color: white;
 }
+
 .search {
-  position: relative;
-  margin: 0 20px;
-  padding: 5px 12px;
-  background-color: white;
-  border-radius: 2em;
-  align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+     position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin: 0 20px;
+    padding: 5px 12px;
+    /* background-color: white; */
+    border-radius: 2em;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
 }
 
 .search-button {
@@ -42,23 +47,20 @@ body {
     display: none;
 }
 
- nav {
-  position: sticky;
-  top:0;
-  z-index: 1000;
-}
+
 
 .menu {
-  position: relative;
-  padding: 16px calc(48px - var(--homepage-font-ratio-increase, 0) * 48px) 0;
-  display: flex;
-  height: 3.5em;
-  justify-content: center !important;
-  align-items: center;
-  gap: 15.1%;
-  font-family: 'roboto';
-  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
-  background-color: white;
+
+    position: relative;
+    padding: 18px calc(48px - var(--homepage-font-ratio-increase, 0) * 48px) 0;
+    display: flex;
+    height: 3.5em;
+    justify-content: center !important;
+    align-items: center;
+    gap: 15.1%;
+    font-family: 'roboto';
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+    
 }
 
 
@@ -71,7 +73,7 @@ body {
     justify-content: center;
     text-align: center;
     margin-bottom: 2px;
-   
+
 }
 
 .menu-tab p {
@@ -187,7 +189,7 @@ button.heart {
     border: none;
     padding: 0;
     cursor: pointer;
-    
+
 }
 
 button.heart img.heart {
@@ -210,7 +212,7 @@ button.heart img.heart {
 
 .angle {
     width: 1rem;
-    height:0.8rem ;
+    height: 0.8rem;
 }
 
 
@@ -291,18 +293,22 @@ element.style .try {
 /* Floating menu bottom */
 
 .bottom-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%; /* 👈 Ensures full width */
-  background: white;
-  display: flex;
-  justify-content: center; /* 👈 Centers all items */
-  align-items: center; /* 👈 Vertical centering (optional but good) */
-  padding: 9px;
-  z-index: 999;
-  gap: 50px; /* 👈 Horizontal space *between* items */
-  box-shadow: 0 -1px 6px rgba(0,0,0,0.1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* 👈 Ensures full width */
+    background: white;
+    display: flex;
+    justify-content: center;
+    /* 👈 Centers all items */
+    align-items: center;
+    /* 👈 Vertical centering (optional but good) */
+    padding: 9px;
+    z-index: 999;
+    gap: 50px;
+    /* 👈 Horizontal space *between* items */
+    box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -314,7 +320,8 @@ element.style .try {
     font-family: 'roboto';
     font-size: 0.8rem;
     color: #717171;
-    cursor: pointer;width:50px;
+    cursor: pointer;
+    width: 50px;
 }
 
 .bar-item i {
@@ -524,9 +531,9 @@ hr {
     .menu {
         gap: 20% !important;
         padding: 16px calc(64px - var(--homepage-font-ratio-increase, 0) * 48px) 0;
-        
+
     }
-    
+
 
     .popular-home-section h3 {
         padding-left: 1.5rem;
@@ -553,9 +560,10 @@ hr {
 
 @media (min-width:744px) and (max-width:949px) {
 
-    .menu{
+    .menu {
         box-shadow: none;
     }
+
     .search {
         display: none;
     }
@@ -565,26 +573,26 @@ hr {
         align-items: center;
         justify-content: space-between;
         background: white;
-        border-radius:50px;
-        box-shadow:5px 5px 70px 5px rgb(0,0, 0, 0.1);
-        padding:10px 20px;
-        max-width:650px;
-        margin:20px auto;
+        border-radius: 50px;
+        box-shadow: 5px 5px 70px 5px rgb(0, 0, 0, 0.1);
+        padding: 10px 20px;
+        max-width: 650px;
+        margin: 20px auto;
         font-family: 'roboto';
     }
 
     .search-item {
-        display:flex;
-        flex-direction:column;
-        padding:0  40px 0 0px;
-        border-right:1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        padding: 0 40px 0 0px;
+        border-right: 1px solid #ddd;
 
     }
 
-    .search-item:last-child{
-        font-size:12px;
-        font-weight:600;
-        color:#888;
+    .search-item:last-child {
+        font-size: 12px;
+        font-weight: 600;
+        color: #888;
         margin-bottom: 2px;
         border-right: none;
     }
@@ -592,35 +600,35 @@ hr {
     .search-label {
         font-size: 12px;
         font-weight: 600;
-        color:#222;
-        margin-bottom:2px;
-        text-align:left;
+        color: #222;
+        margin-bottom: 2px;
+        text-align: left;
     }
 
-    .search-value{
-        font-size:14px;
-        color:#888;
-        text-align:left;
+    .search-value {
+        font-size: 14px;
+        color: #888;
+        text-align: left;
     }
 
-    .search-buttons{
-        background-color:#ff385c;
+    .search-buttons {
+        background-color: #ff385c;
         border-radius: 50%;
         border: none;
-        width:40px;
-        height:40px;
-        display:flex;
-        align-items:center;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
         justify-content: center;
-        margin-left:20px;
-        cursor:pointer;
+        margin-left: 20px;
+        cursor: pointer;
         color: white;
     }
 
     svg {
-        width:16px;
-        height:16px;
-        color:white;
+        width: 16px;
+        height: 16px;
+        color: white;
     }
 
 
