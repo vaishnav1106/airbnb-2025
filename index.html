@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="small-screen">
         <section>
             <div class="search">
                 <div class="search-button">
@@ -27,12 +27,13 @@
                     <p>Start your search</p>
                 </div>
             </div>
+
             <nav>
                 <div class="menu">
                     <div class=" menu-tab">
                         <!-- <img class="icon-wrapper" src="https://a0.muscache.com/im/pictures/airbnb-platform-assets/AirbnbPlatformAssets-search-bar-icons/original/a32adab1-f9df-47e1-a411-bdff91b579c3.png?im_w=240" 
-                    alt="Home Icon" width="60px" height="60px" padding="200px;" /> -->
-                        <div class="active tab">
+                        alt="Home Icon" width="60px" height="60px" padding="200px;" /> -->
+                        <div class="active tab ">
                             <img class="img" src="img/home.png">
                             <span>
                                 <p>Homes</p>
@@ -41,7 +42,7 @@
                     </div>
                     <div class="menu-tab">
                         <!-- <img src="https://a0.muscache.com/im/pictures/airbnb-platform-assets/AirbnbPlatformAssets-search-bar-icons/original/e47ab655-027b-4679-b2e6-df1c99a5c33d.png?im_w=240" 
-                    alt="Hot Air Balloon Icon" width="60px" height="60px" /> -->
+                        alt="Hot Air Balloon Icon" width="60px" height="60px" /> -->
                         <img src="img/experiences.png" class="img">
                         <span class="badge ">NEW</span>
                         <span>
@@ -50,7 +51,7 @@
                     </div>
                     <div class="menu-tab">
                         <!-- <img src="https://a0.muscache.com/im/pictures/airbnb-platform-assets/AirbnbPlatformAssets-search-bar-icons/original/2bf5d36d-e731-4465-a8ef-91abbf2ae8ce.png?im_w=240" 
-                    alt="Concierge Icon" width="70px" height="70px"/> -->
+                        alt="Concierge Icon" width="70px" height="70px"/> -->
                         <img src="img/servicees.png" class="img">
                         <span class="badge ">NEW</span>
                         <span>
@@ -58,38 +59,93 @@
                         </span>
                     </div>
                 </div>
+
             </nav>
+            </div>
         </section>
     </header>
 
-    <!-- only for big screen  -->
-    <header class="search-bar">
-        <div class="search-item">
-            <span class="search-label">Where</span>
-            <span class="search-value">Search destinations</span>
-        </div>
 
-        <div class="search-item">
-            <span class="search-label">Check In</span>
-            <span class="search-value">Add dates</span>
-        </div>
+    <!-- for large screen -->
 
-        <div class="search-item">
-            <span class="search-label">Check Out</span>
-            <span class="search-value">Add dates</span>
-        </div>
-        <div class="search-item">
-            <span class="search-label">Who</span>
-            <span class="search-value">Add guest</span>
-        </div>
-        <button class="search-buttons">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                <path d="M22.412 20.586l5.293 5.293-1.414 1.414-5.293-5.293a10.95 10.95 0 0 1-6.998 2.586C8.298 24.586 3 19.288 3 12.793S8.298 1 14.793 1 26.586 6.298 26.586 12.793a10.95 10.95 0 0 1-2.586 6.998zM14.793 3C9.477 3 5 7.477 5 
+    <div class="large-screen">
+
+        <section class="big-screen">
+            <div class="screen-logo">
+                <img src="img/logo.svg">
+            </div>
+
+            <nav class="nav">
+                <div class="menu">
+                    <div class=" menu-tab">
+                        <!-- <img class="icon-wrapper" src="https://a0.muscache.com/im/pictures/airbnb-platform-assets/AirbnbPlatformAssets-search-bar-icons/original/a32adab1-f9df-47e1-a411-bdff91b579c3.png?im_w=240" 
+                        alt="Home Icon" width="60px" height="60px" padding="200px;" /> -->
+                        <div class="active tab ">
+                            <img class="img" src="img/home.png">
+                            <span>
+                                <p>Homes</p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="menu-tab">
+                        <!-- <img src="https://a0.muscache.com/im/pictures/airbnb-platform-assets/AirbnbPlatformAssets-search-bar-icons/original/e47ab655-027b-4679-b2e6-df1c99a5c33d.png?im_w=240" 
+                        alt="Hot Air Balloon Icon" width="60px" height="60px" /> -->
+                        <img src="img/experiences.png" class="img">
+                        <span class="badge ">NEW</span>
+                        <span>
+                            <p>Experiences</p>
+                        </span>
+                    </div>
+                    <div class="menu-tab">
+                        <!-- <img src="https://a0.muscache.com/im/pictures/airbnb-platform-assets/AirbnbPlatformAssets-search-bar-icons/original/2bf5d36d-e731-4465-a8ef-91abbf2ae8ce.png?im_w=240" 
+                        alt="Concierge Icon" width="70px" height="70px"/> -->
+                        <img src="img/servicees.png" class="img">
+                        <span class="badge ">NEW</span>
+                        <span>
+                            <p>Services</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="globe-logo">
+                    <span>
+                        <img src="img/globe-icon.svg" alt="">
+                    </span>
+                
+                    <span>
+                        <img src="img/menu.png">
+                    </span>
+                </div>
+            </nav>
+        </section>
+        <!-- only for big screen  -->
+        <header class="search-bar">
+            <div class="search-item">
+                <span class="search-label">Where</span>
+                <span class="search-value">Search destinations</span>
+            </div>
+
+            <div class="search-item">
+                <span class="search-label">Check In</span>
+                <span class="search-value">Add dates</span>
+            </div>
+
+            <div class="search-item">
+                <span class="search-label">Check Out</span>
+                <span class="search-value">Add dates</span>
+            </div>
+            <div class="search-item">
+                <span class="search-label">Who</span>
+                <span class="search-value">Add guest</span>
+            </div>
+            <button class="search-buttons">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <path d="M22.412 20.586l5.293 5.293-1.414 1.414-5.293-5.293a10.95 10.95 0 0 1-6.998 2.586C8.298 24.586 3 19.288 3 12.793S8.298 1 14.793 1 26.586 6.298 26.586 12.793a10.95 10.95 0 0 1-2.586 6.998zM14.793 3C9.477 3 5 7.477 5 
                     12.793S9.477 22.586 14.793 22.586 24.586 18.109 24.586 12.793 20.109 3 14.793 3z"
-                    fill="currentColor" size=16X16 />
-            </svg>
-        </button>
-    </header>
+                        fill="currentColor" size=16X16 />
+                </svg>
+            </button>
+        </header>
+    </div>
 
     <!-- //////////////////////////////////// -->
     <main class="main-slider">

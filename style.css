@@ -8,17 +8,17 @@ body {
 }
 
 header {
-   
+
     position: sticky;
-    top:0;
+    top: 0;
     z-index: 1000;
     background-color: white;
 }
 
 .search {
-     position: sticky;
+    /* position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; */
     margin: 0 20px;
     padding: 5px 12px;
     /* background-color: white; */
@@ -47,12 +47,15 @@ header {
     display: none;
 }
 
+.large-screen {
+    display: none;
+}
 
 
 .menu {
 
     position: relative;
-    padding: 18px calc(48px - var(--homepage-font-ratio-increase, 0) * 48px) 0;
+    padding: 20px calc(50px - var(--homepage-font-ratio-increase, 0) * 48px) 0;
     display: flex;
     height: 3.5em;
     justify-content: center !important;
@@ -60,7 +63,7 @@ header {
     gap: 15.1%;
     font-family: 'roboto';
     box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
-    
+    padding-bottom: 5px;
 }
 
 
@@ -258,7 +261,12 @@ element.style .try {
 
 .tab.active.tabs {
     color: #000;
+    line-height: 200px;
 
+}
+
+.active.tab p {
+    padding-top: 5px !important;
 }
 
 .tab.active.label {
@@ -269,12 +277,12 @@ element.style .try {
 .tab.active::after {
     content: "";
     position: absolute;
-    bottom: -4px;
-    right: 12px;
-    width: 65%;
+    bottom: -6px;
+    width: 80%;
     height: 1px;
     background-color: #000000;
     padding-bottom: 1px;
+    align-items: center;
 }
 
 .tabs::after {
@@ -508,6 +516,11 @@ hr {
 
 /* 🟨 Media query: Between 371px and 743px */
 @media (min-width: 371px) and (max-width: 743px) {
+    header {
+        padding-top: 10px;
+
+    }
+
     .search-bar {
         display: none;
     }
@@ -524,14 +537,25 @@ hr {
     }
 
     .img {
-        width: 38px;
-        height: 36px;
+        width: 28px;
+        height: 26px;
     }
 
+
     .menu {
-        gap: 20% !important;
+        gap: 30% !important;
         padding: 16px calc(64px - var(--homepage-font-ratio-increase, 0) * 48px) 0;
 
+    }
+
+    .tab.active::after {
+
+        bottom: -1px;
+
+    }
+
+    .menu-tab {
+        padding-top: 25px;
     }
 
 
@@ -565,6 +589,39 @@ hr {
     }
 
     .search {
+        display: none;
+    }
+    
+    .large-screen {
+        display: contents
+    }
+
+    .big-screen {
+        display: flex;
+    }
+
+    .big-screen img {
+        width: 40px;
+        height: 40px;
+        align-items: center;
+    }
+
+    .big-screen span {
+        width: 50px;
+        height: 50;
+    }
+
+    .screen-logo {
+        display: flex;
+    }
+
+    .globe-logo img {
+        width: 16px;
+        height: 16px;
+
+    }
+
+    .small-screen {
         display: none;
     }
 
@@ -635,5 +692,14 @@ hr {
     .home-card {
         flex: 0 0 calc(23.5%);
     }
+
+}
+
+
+
+
+@media (min-width:950px) {
+
+    .large-screen {}
 
 }
