@@ -63,7 +63,7 @@ header {
     gap: 15.1%;
     font-family: 'roboto';
     box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
-    padding-bottom: 4px;
+    padding-bottom: 5px;
 }
 
 
@@ -92,6 +92,11 @@ header {
     width: 42px;
     height: 42px;
     align-items: center;
+}
+.menu-tab .img{
+    align-items: center;
+    width:44px;
+    height:42px;
 }
 
 .icon-wrapper {
@@ -277,9 +282,10 @@ element.style .try {
 .tab.active::after {
     content: "";
     position: absolute;
-    bottom: -2px;
+    bottom: -3px;
     width: 80%;
-    height: 1px;
+    height: 1.7px;
+    border-radius: 2px;
     background-color: #000000;
     padding-bottom: 1px;
     align-items: center;
