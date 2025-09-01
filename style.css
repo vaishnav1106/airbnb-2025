@@ -63,7 +63,7 @@ header {
     gap: 15.1%;
     font-family: 'roboto';
     box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
-    padding-bottom: 5px;
+    padding-bottom: 2px;
 }
 
 
@@ -277,7 +277,7 @@ element.style .try {
 .tab.active::after {
     content: "";
     position: absolute;
-    bottom: -2px;
+    bottom: 0px;
     width: 80%;
     height: 1px;
     background-color: #000000;
