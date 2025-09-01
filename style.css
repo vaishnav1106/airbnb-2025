@@ -546,9 +546,9 @@ hr {
     } */
 
     .menu {
-        gap: 35% !important;
-        padding: 16px calc(64px - var(--homepage-font-ratio-increase, 0) * 48px) 0;
-
+        gap: 32% !important;
+        padding: 16px calc(70px - var(--homepage-font-ratio-increase, 0) * 48px) 0;
+        
     }
 
     .home p{
@@ -557,7 +557,8 @@ hr {
 
     .tab.active::after {
 
-        bottom: 1px;
+        bottom: 0px;
+        width:100%;
 
     }
 
