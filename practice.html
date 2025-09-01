@@ -5,40 +5,276 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=>, initial-scale=1.0">
     <title>Document</title>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <style>
-        main{
-            display: flex;
-            gap:10px;
-            outline: 1px solid green;
+        body{
+            margin: 0;
+            padding:10px 0 0;
         }
-        section{
-            outline: 1px solid red;
-            text-align: center;
-        }
+.big-screen {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;   /* keeps logo, menu, and icons aligned */
+    justify-content: space-between; /* push logo left, icons right */
+    padding: 0.5vw 2vw;   /* small vertical + horizontal padding */
+    background: white;
+    flex-wrap: nowrap;
+    /* gap: 15vw !important; */
+}
+
+
+.screen-logo img {
+    height: 3.2vw !important; /* Logo scales */
+    width:3.5vw !important;
+    min-height: 20px;
+    max-height: 56px;
+    cursor: pointer;
+}
+
+/* Center menu */
+.menu {
+    display: flex;
+    margin: 0 80px !important;
+    gap: 3.5vw; /* Space between menu items */
+    flex: 1;
+    justify-content: center;
+    min-width: 0; /* Allows shrink */
+    top:80px !important;
+    right: 60px !important;
+}
+
+.menu-tab {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 0.3vw;
+    white-space: nowrap; /* Keep text on one line */
+}
+
+.menu-tab img {
+    width: 5vw;
+    height: 4.5vw;
+    min-width: 38px;
+    min-height: 38px;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.menu-tab span {
+    font-size: 1.6vw;
+    font-weight: 500;
+    color: #706c6c;
+}
+
+.menu-tab.active span {
+    font-weight: 600;
+    color: black;
+}
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.2vw;
+    width: 100%;
+    background-color: black;
+    border-radius: 2px;
+}
+
+/* Badge */
+.icon-wrapper {
+    position: relative;
+}
+
+.badge {
+    background:  rgb(39, 100, 190);
+    color: white !important;
+    font-size: 1vw !important;
+    padding: 0.2vw 0.4vw;
+    border-radius: 999px;
+    position: absolute;
+    top: -0.8vw;
+    right: -2.4vw;
+    white-space: nowrap;
+}
+
+/* Right icons */
+.right-icons {
+    display: flex;
+    position:right !important;
+    gap: 1vw;
+    flex-shrink: 0;
+}
+
+.icon-circle {
+    width: 5vw;
+    height: 5vw;
+    min-width: 24px;
+    min-height: 24px;
+    max-width: 40px;
+    max-height: 40px;
+    background: #f7f7f7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+ 
+.icon-circle img {
+    width: 2vw;
+    height: 2vw;
+    min-width: 12px;
+    min-height: 12px;
+    max-width: 16px;
+    max-height: 16px;
+}
+
+.search-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: white;
+        border-radius: 50px;
+        box-shadow: 5px 5px 70px 5px rgb(0, 0, 0, 0.1);
+        padding: 10px 20px;
+        max-width: 650px;
+        margin: 20px auto;
+        font-family: 'roboto';
+    }
+
+    .search-item {
+        display: flex;
+        flex-direction: column;
+        padding: 0 40px 0 0px;
+        border-right: 1px solid #ddd;
+
+    }
+
+    .search-item:last-child {
+        font-size: 12px;
+        font-weight: 600;
+        color: #888;
+        margin-bottom: 2px;
+        border-right: none;
+    }
+
+    .search-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 2px;
+        text-align: left;
+    }
+
+    .search-value {
+        font-size: 14px;
+        color: #888;
+        text-align: left;
+    }
+
+    .search-buttons {
+        background-color: #ff385c;
+        border-radius: 50%;
+        border: none;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 20px;
+        cursor: pointer;
+        color: white;
+    }
+
+
     </style>
 </head>
-
 <body>
-    <header>
-        <h1>my first web page</h1>
+  
+
+
+    <!-- for large screen -->
+
+    <header class="large-screen">
+         <section class="big-screen">
+    <!-- Left Logo -->
+    <div class="screen-logo">
+        <img src="img/logo.svg" alt="Logo">
+    </div>
+
+    <!-- Center Menu Tabs -->
+    <nav class="nav">
+        <div class="menu">
+            <div class="menu-tab active">
+                <img src="img/home.png" alt="Homes">
+                <span>Homes</span>
+                <div class="underline"></div>
+            </div>
+
+            <div class="menu-tab">
+                <div class="icon-wrapper">
+                    <img src="img/experiences.png" alt="Experiences">
+                    <span class="badge">NEW</span>
+                </div>
+                <span>Experiences</span>
+            </div>
+
+            <div class="menu-tab">
+                <div class="icon-wrapper">
+                    <img src="img/servicees.png" alt="Services">
+                    <span class="badge">NEW</span>
+                </div>
+                <span>Services</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Right Icons -->
+    <div class="right-icons">
+        <div class="icon-circle">
+            <img src="img/globe-icon.svg" alt="Globe">
+        </div>
+        <div class="icon-circle">
+            <img class="icon" src="img/menu.png" alt="Menu">
+        </div>
+    </div>
+</section>
+        
+           
+        <!-- only for big screen  -->
+        <section class="search-bar">
+            <div class="search-item">
+                <span class="search-label">Where</span>
+                <span class="search-value">Search destinations</span>
+            </div>
+
+            <div class="search-item">
+                <span class="search-label">Check In</span>
+                <span class="search-value">Add dates</span>
+            </div>
+
+            <div class="search-item">
+                <span class="search-label">Check Out</span>
+                <span class="search-value">Add dates</span>
+            </div>
+            <div class="search-item">
+                <span class="search-label">Who</span>
+                <span class="search-value">Add guest</span>
+            </div>
+            <button class="search-buttons">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <path d="M22.412 20.586l5.293 5.293-1.414 1.414-5.293-5.293a10.95 10.95 0 0 1-6.998 2.586C8.298 24.586 3 19.288 3 12.793S8.298 1 14.793 1 26.586 6.298 26.586 12.793a10.95 10.95 0 0 1-2.586 6.998zM14.793 3C9.477 3 5 7.477 5 
+                    12.793S9.477 22.586 14.793 22.586 24.586 18.109 24.586 12.793 20.109 3 14.793 3z"
+                        fill="currentColor" size=16X16 />
+                </svg>
+            </button>
+        </section>
     </header>
-    <main>
-        <section>
-            <img src="img/home.png">
-            <p>hi welcome</p>
-        </section>
 
-        <section>
-            <img src="img/home1.png">
-            <p>hi come again</p>
-        </section>
-    </main>
-    <footer>
-        <p>see you soon</p>
-    </footer>
+
 </body>
-
-tryyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
-
-
 </html>
