@@ -266,7 +266,7 @@ element.style .try {
 }
 
 .active.tab p {
-    padding-top: 5px !important;
+    padding-top: 4px !important;
 }
 
 .tab.active.label {
@@ -545,17 +545,21 @@ hr {
         height: 26px;
     } */
 
-    /* .menu {
-        gap: 30% !important;
+    .menu {
+        gap: 35% !important;
         padding: 16px calc(64px - var(--homepage-font-ratio-increase, 0) * 48px) 0;
 
-    } */
+    }
 
-    /* .tab.active::after {
+    .home p{
+        padding-top:20px;
+    }
 
-        bottom: -1px;
+    .tab.active::after {
 
-    } */
+        bottom: 2px;
+
+    }
 
     /* .menu-tab {
         padding-top: 25px;
