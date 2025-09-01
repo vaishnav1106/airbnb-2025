@@ -1,12 +1,13 @@
 body{
     font-family: 'roboto';
+    margin: 0;
 }
 
 
 /* footer */
 footer {
     background-color: #f7f7f7;
-    padding: 60px 16px;
+    padding: 60px 24px;
     margin-bottom: 40px;
     font-family: 'roboto', Arial, sans-serif;
     color: #222;
@@ -15,72 +16,18 @@ footer {
 
 .footer-section {
     max-width: 1200px;
-    margin: 0;
+    padding: 48px 0px;
 }
 
 .footer-section h2 {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 22px;
+    margin-bottom: 2px;
 }
 
-.footer-tabs {
-    display: flex;
-    gap: 20px;
-    padding-bottom: 3px;
-    border-bottom: 1px solid #ccc;
-}
-
-.footer-links {
-    display: flex;
-    flex-direction: row;
-    padding-top: 32px;
-    max-width: 350px;
-    width: 100%;
-    gap: 80px;
-}
-
-.footer-links ul {
-    max-width: 150px;
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin-bottom: 15px;
-
-}
-
-.footer-links li span {
-    color: #717171;
-    font-size: 1em;
-
-}
-
-.footer-links a {
-    padding-bottom: 3rem;
-}
-
-.show-more {
-    cursor: pointer;
-    font-weight: bold;
-    display: flex;
-    gap: 5px;
-}
-
-.button {
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.show-more-icon {
-    width: 12px;
-    height: 15px;
-    padding-top: 2px;
-}
 
 hr {
     border: none;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #b8b3b381;
     margin: 10px 0;
     width: 100%;
     height: 1px;
@@ -88,12 +35,14 @@ hr {
 
 .footer-column {
     min-width: 100px;
+    padding:24px 0;
 }
 
 .footer-column h4 {
     font-family: 'roboto';
     margin-bottom: 10px;
     font-size: 14px;
+    margin-top:0;
 }
 
 .footer-column ul {
@@ -131,7 +80,7 @@ hr {
 
 .globe-icon {
     font-family: 'roboto';
-    color: black;
+    color: rgb(34, 34, 34);
     font-size: 14px;
 }
 
