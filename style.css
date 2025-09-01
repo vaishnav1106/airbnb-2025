@@ -557,7 +557,7 @@ hr {
 
     .tab.active::after {
 
-        bottom: 2px;
+        bottom: 1px;
 
     }
 
