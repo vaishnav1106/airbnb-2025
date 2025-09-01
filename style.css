@@ -632,28 +632,25 @@ hr {
         flex: 1;
         justify-content: center;
         min-width: 0;
-        
-        
     }
 
     .menu-tab {
         display: flex;
         align-items: center;
-        gap: vw;
+        gap: 1vw;
         position: relative;
         cursor: pointer;
         padding-bottom: 0.3vw;
         white-space: nowrap;
-        /* Keep text on one line */
     }
 
     .menu-tab img {
         width: 5.4vw;
         height: 4.5vw;
-        min-width: 38px;
+        /* min-width: 38px;
         min-height: 38px;
         max-width: 50px;
-        max-height: 50px;
+        max-height: 50px; */
     }
 
     .menu-tab span {
@@ -680,6 +677,7 @@ hr {
     /* Badge */
     .icon-wrapper {
         position: relative;
+        width:4.5vw;
     }
 
     .badge {
@@ -733,9 +731,9 @@ hr {
         background: white;
         border-radius: 50px;
         box-shadow: 5px 5px 70px 5px rgb(0, 0, 0, 0.1);
-        padding: 10px 20px;
+        padding: 10px 20px ;
         max-width: 700px;
-        margin: 20px auto;
+        margin: 20px auto 40px;
         font-family: 'roboto';
     }
 
