@@ -24,7 +24,8 @@ header {
     /* background-color: white; */
     border-radius: 2em;
     align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    border: 0.5px solid rgba(0,0,0,0.08);
 }
 
 .search-button {
@@ -53,19 +54,18 @@ header {
 
 
 .menu {
-
     position: relative;
     padding: 20px calc(50px - var(--homepage-font-ratio-increase, 0) * 48px) 0;
     display: flex;
-    height: 3.1em;
+    height: 3.6em;
     justify-content: center !important;
     align-items: center;
     gap: 15.1%;
     font-family: 'roboto';
     box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+    padding-bottom: 4px;
    
 }
-
 
 .menu-tab {
     position: relative;
@@ -86,17 +86,10 @@ header {
     color: #6a6a6a;
 }
 
-/* .img {
-    padding: 0;
-    margin: 0;
-    width: 36px;
-    height: 20px;
-    align-items: center;
-} */
 .menu-tab img{
     align-items: center;
-    width:30px;
-    height:30px;
+    width:40px;
+    height:40px;
 }
 
 .icon-wrapper {
@@ -133,7 +126,7 @@ header {
 /* Slider container */
 .homes-slider {
     display: flex;
-    gap: 1rem;
+    gap: .8rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding: 0 1rem;
@@ -147,7 +140,7 @@ header {
 
 /* Card */
 .home-card {
-    flex: 1 0 calc(51% - 1rem);
+    flex: 1 0 calc(52% - 1rem);
     /* Adjust as per layout */
     display: flex;
     flex-direction: column;
@@ -158,7 +151,7 @@ header {
 .img-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 4 / 3.6;
+    aspect-ratio: 4 / 4;
     /* Maintains responsive height */
     overflow: hidden;
     border-radius: 12px;
@@ -177,7 +170,7 @@ header {
     position: absolute;
     top: 0.5rem;
     left: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.74);
+    background-color: rgba(255, 255, 255, 0.808);
     color: rgb(22, 21, 21);
     padding: 0.3em .6em;
     border-radius: 12px;
@@ -267,30 +260,27 @@ element.style .try {
     transform: scale(1.05);
 }
 
-.tab.active.tabs {
-    color: #000;
-    line-height: 200px;
-
+.active.tab p{
+    padding-top: 3px !important;
+    padding-bottom: 3px;
 }
 
-.active.tab p {
-    padding-top: 4px !important;
+.menu-tab p {
+    padding: 1px 0 1px 0;
 }
 
 .tab.active.label {
-
     border-bottom: 3px solid #333;
 }
 
 .tab.active::after {
     content: "";
-    position: absolute;
-    bottom: -3px;
-    width: 100%;
+    bottom: 0px;
+    width: 90%;
     height: 1.7px;
     border-radius: 2px;
     background-color: #000000;
-    padding-bottom: 1px;
+    padding-bottom: 2px;
     align-items: center;
 }
 
@@ -314,17 +304,13 @@ element.style .try {
     bottom: 0;
     left: 0;
     width: 100%;
-    /* 👈 Ensures full width */
     background: white;
     display: flex;
     justify-content: center;
-    /* 👈 Centers all items */
     align-items: center;
-    /* 👈 Vertical centering (optional but good) */
     padding: 9px;
     z-index: 999;
     gap: 50px;
-    /* 👈 Horizontal space *between* items */
     box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -507,23 +493,24 @@ hr {
         /* Hide the line break */
     }
 
-    /* .img {
-        width: 28px;
-        height: 26px;
-    } */
 
     .menu {
         gap: 16% !important;
-        padding: 16px calc(56px - var(--homepage-font-ratio-increase, 0) * 48px) 5px;
-        padding-top: 25px;
+        padding: 28px calc(56px - var(--homepage-font-ratio-increase, 0) * 48px) 5px;
+        padding-bottom: 0px;
     }
 
-    .menu .img{
-
+    .menu-tab{
+        height: 5.6em ;
     }
 
-    .home p{
-        padding-top:20px;
+    .menu-tab img{
+        width:42px;
+        height:40px;
+    }
+
+    .active p{
+        padding-top:0;
     }
 
     .tab.active::after {
@@ -537,7 +524,8 @@ hr {
 
 
     .popular-home-section h3 {
-        padding-left: 1.5rem;
+        padding:20px 0 18px 1.5rem;
+        font-size: 18px;
     }
 
     .homes-slider {
@@ -546,7 +534,7 @@ hr {
     }
 
     .home-card {
-        flex: 1 0 calc(50% - 1rem);
+        flex: 1 0 calc(50.1% - .5rem);
     }
 
     .footer-links {
