@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heading</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    /* *{
+        outline: 1px solid red;
+    } */
+    body {
+        background-color: rgba(250, 248, 248, 0.664);
+        margin: 8px 0 0;
+        padding: 0;
+        font-family: 'roboto';
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* padding: 0 12px; */
+        height: 56px;
+        /* fixed header height */
+        width: 100%;
+        /* full width */
+        background: transparent;
+    }
+
+    .mobile-header {
+        /* padding-top:20px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 462px;
+        /* limit max width */
+        height: 100%;
+        margin: 12px 24px 0px;
+
+    }
+
+    button {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1000px;
+        border: none;
+        background: #ffffff;
+        padding: 0px 12px;
+        width: 100%;
+        max-width: 463px;
+        height: 54px;
+        /* normal button height */
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 20px 0px;
+        cursor: pointer;
+    }
+
+    .search {
+        font-size: 14px;
+        font-family: 'roboto';
+        margin: 0;
+    }
+
+    .menu {
+        display: flex;
+
+        justify-content: space-between;
+        /* even spacing */
+        padding: 26px 64px 0;
+    }
+
+    .menu-tab {
+        display: flex;
+        flex-direction: column;
+        /* icon above, text below */
+        align-items: center;
+        /* center horizontally */
+        width: 68px;
+        height: 60px;
+        cursor: pointer;
+        /* outline:1px solid red */
+    }
+
+    .menu-tab img {
+       
+        width: 36px;
+        height: 36px;
+        margin-bottom: 4px;
+        /* space between icon and text */
+    }
+
+    .menu-tab p {
+        font-size: 12px;
+        margin: 0;
+        /* remove default paragraph margin */
+    }
+
+    .badge{
+        position:static;
+        display: inline-block;
+        padding:3px 6px;
+        font-size:0.5rem;
+        color:#ffffff;
+        box-shadow: 0 0.953955px 1.90791px rgba(60, 77, 107, 0.25), 0 3.81582px 5.72373px rgba(60, 77, 107, 0.25), inset 0 0 2px 0.5px #001c40, inset 0 -1px 3px #d7ebff;
+        background: linear-gradient(357.5deg, #3e567c 1.59%, #3a5475 21.23%, #2d3c5b 58.6%, #809dc0 97.4%);
+        border-radius:10px 10px 10px 2px;
+        transform-origin: bottom left;
+        top:-5px;
+        right:100%;
+        box-sizing: border-box;
+
+    }
+</style>
+
+<body>
+    <section class="small-header">
+        <div class="header">
+            <div class="mobile-header">
+                <button><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false"
+                        style="display: block; height: 12px; width: 12px; fill: currentcolor;" width="11.78"
+                        height="11.78">
+                        <path
+                            d="M13 0a13 13 0 0 1 10.5 20.67l7.91 7.92-2.82 2.82-7.92-7.91A12.94 12.94 0 0 1 13 26a13 13 0 1 1 0-26zm0 4a9 9 0 1 0 0 18 9 9 0 0 0 0-18z"
+                            fill="#222222"></path>
+                    </svg>
+                    <p class="search">Start your search</p>
+                </button>
+            </div>
+        </div>
+        <div class="menu">
+            <a>
+                <div class="menu-tab">
+                    <img src="img/1menu-logo.avif" alt="home" style="width:44px">
+                    <p>Homes</p>
+                </div>
+            </a>
+            <div class="menu-tab">
+                <span class="badge">NEW</span>
+                <img src="img/menu-logo1.avif" alt="experiences">
+                <p>Experiences</p>
+            </div>
+            <div class="menu-tab">
+                <span class="badge">NEW</span>
+                <img src="img/menu-logo2.avif" alt="services" style="width:36px; height:36px ">
+                <p>Services</p>
+            </div>
+        </div>
+
+
+
+    </section>
+</body>
+
+</html>

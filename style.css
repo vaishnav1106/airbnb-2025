@@ -477,6 +477,9 @@ hr {
         padding-top: 10px;
 
     } */
+     body{
+        font-family: 'roboto';
+     }
 
     .search-bar {
         display: none;
@@ -598,7 +601,6 @@ hr {
     .menu-tab {
         display: flex;
         justify-content: space-evenly;
-        gap: 1vw;
         cursor: pointer;
         padding-bottom: 0.3vw;
     }
@@ -626,6 +628,7 @@ hr {
 
     .underline {
         position:absolute;
+        
         bottom: 0;
         left:5px;
         width: 160%;
@@ -636,19 +639,17 @@ hr {
 
     /* Badge */
     .icon-wrapper {
-        position: relative;
-        width:4.5vw;
+        /* position: relative; */
+        width:2vw;
     }
 
     .badge {
         background-color: rgb(39, 100, 190);
         color: white !important;
         font-size: 1vw !important;
-        padding: 0.2vw 0.4vw;
-        border-radius: 999px;
-        position: absolute;
-        top: -0.8vw;
-        right: -2.4vw;
+        border-radius:50px;
+        position: relative;
+        bottom: 2.5vw;
         white-space: nowrap;
     }
 
@@ -684,15 +685,15 @@ hr {
         max-height: 16px;
     }
 
-    .search-bar {
+  .search-bar {
         display: flex;
         align-items: center;
         justify-content: space-between;
         background: white;
         border-radius: 50px;
         box-shadow: 5px 5px 15px 4.5px rgb(0, 0, 0, 0.2);
-        padding: 13px 20px ;
-        width: 650px;
+        padding: 0px 20px ;
+        width: clamp(650px, calc(650px + (200 * ((100vw - 745px) / 204))), 850px);
         margin: 20px auto 40px;
         font-family: 'roboto';
         /* border: .1px solid black; */
@@ -701,7 +702,8 @@ hr {
     .search-item {
         display: flex;
         flex-direction: column;
-        padding: 0 40px 0 0px;
+        padding:14px  40px 14px 14px;
+        justify-content: space-between;
         border-right: 1px solid #ddd;
 
     }
@@ -728,6 +730,7 @@ hr {
         text-align: left;
     }
 
+
     .search-buttons {
         background-color: #ff385c;
         border-radius: 50%;
@@ -747,24 +750,20 @@ hr {
         display: none;
     }
 
-
-    /* svg {
-        width: 16px;
-        height: 16px;
-        color: white;
-    } */
-
-    
-
     .popular-home-section{
         padding: 0 24px;
+    }
+
+    .popular-home-section h3 {
+        padding:20px 0 18px 0;
+        font-size: 18px;
     }
     .homes-slider{
         padding:0;
     }
 
     .home-card {
-        flex: 1 0 calc(23.7%);
+        flex: 1 0 calc(23.8%);
     }
 
     .badge-text {
@@ -782,17 +781,18 @@ hr {
     .sub{
         display:none;
     }
-    .footer{
-        padding:0 24px;
+   
+    .footer-section{
+        padding-left:8px;
     }
     .footer-section h2{
-        font-size:24px;
+        font-size:24px; 
     }
     .footer-columns {
         display:flex;
         justify-content: space-between;/*spread columns evenly*/
         gap:10px;
-        padding:20px ;
+        padding:20px 8px;
     }
 
     .footer-column{
@@ -839,7 +839,7 @@ hr {
 }
 
 
-@media (min-width:950px) {
+@media (min-width:950px){
     .popular-home-section h3 {
         font-family: 'roboto' !important;
     }
@@ -856,7 +856,7 @@ hr {
         /* keeps logo, menu, and icons aligned */
         justify-content: space-between;
         /* push logo left, icons right */
-        padding: 0.5vw 2vw;
+        padding: 0.5vw 3vw;
         /* small vertical + horizontal padding */
         background: white;
         flex-wrap: nowrap;
@@ -882,36 +882,28 @@ hr {
     /* Center menu */
     .menus {
         display: flex;
-        margin: 0 80px !important;
-        gap: 8vw !important;
-        /* Space between menu items */
-        flex: 1;
-        justify-content: center;
-        min-width: 0;
-        /* Allows shrink */
-        top: 80px !important;
-        right: 60px !important;
+        justify-content: space-between;
+        width:400px;
+        align-items: center;
     }
 
     .menu-tab {
         display: flex;
-        align-items: center;
-        gap: 1vw;
-        position: relative;
+        position: inline;
         cursor: pointer;
         padding-bottom: 0.3vw;
-        white-space: nowrap;
+        justify-content:center;
         /* Keep text on one line */
     }
 
     .menu-tab img {
-        width: 5vw;
-        height: 4.5vw;
+        width: 4vw;
+        height:4vw;
     
     }
 
     .menu-tab span {
-        font-size: 1.6vw;
+        font-size: 14px;
         font-weight: 500;
         color: #706c6c;
     }
@@ -926,7 +918,7 @@ hr {
         bottom: 0;
         left: 5;
         height: 0.2vw;
-        width: 165%;
+        width: 150%;
         background-color: black;
         border-radius: 2px;
     }
@@ -991,6 +983,7 @@ hr {
         max-width: 750px;
         margin: 20px auto;
         font-family: 'roboto';
+         border: 0.5px solid rgba(0,0,0,0.08);
     }
 
     .search-item {
@@ -1042,18 +1035,24 @@ hr {
         display: none;
     }
 
-
-    svg {
-        width: 16px;
-        height: 16px;
-        color: white;
-    }
-
-
     .home-card {
-        flex: 0 0 calc(23.5%);
+        flex: 1 0 calc(18.9%);
+    }
+    .popular-home-section{
+        padding: 0 24px;
+    }
+    .popular-home-section h3{
+        padding:32px 18px 14px;
+    }
+    .homes-slider{
+        padding:0px;
     }
 
+    .badge-text {
+        white-space: nowrap;
+        /* Force single line */
+        max-width: 9.5em;
+    }
 }
 
 @media (min-width:950px){
@@ -1076,4 +1075,6 @@ hr {
         flex: 2;
     }
 }
+@media (min-width:1128px) {
 
+}

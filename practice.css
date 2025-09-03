@@ -196,3 +196,115 @@ hr {
     }
 }
 
+/* ///////////////////////////////// */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menus {
+        display: flex;
+        justify-content:space-between;
+        width: 400px !important;
+    }
+
+    .menu-tab {
+        display: flex;
+        justify-content: space-evenly;
+        cursor: pointer;
+        padding-bottom: 0.3vw;
+    }
+    
+
+    .menu-tab img {
+        width: 10.4vw;
+        height: 5.5vw;
+        /* min-width: 38px;
+        min-height: 38px;
+        max-width: 50px;
+        max-height: 50px; */
+    }
+
+    .menu-tab span {
+        font-size: 14px;
+        font-weight: 700;
+        color: #706c6c;
+    }
+
+    .menu-tab.active span {
+        font-weight: 700;
+        color: #0f0f0f;
+    }
+
+    .underline {
+        position:absolute;
+        
+        bottom: 0;
+        left:5px;
+        width: 160%;
+        background-color: black;
+        border-radius: 2px;
+        padding:1.2px;
+    }
+
+    /* Badge */
+    .icon-wrapper {
+        /* position: relative; */
+        width:2vw;
+    }
+
+    .badge {
+        background-color: rgb(39, 100, 190);
+        color: white !important;
+        font-size: 1vw !important;
+        border-radius:50px;
+        position: relative;
+        bottom: 2.5vw;
+        white-space: nowrap;
+    }
+
+    /* Right icons */
+    .right-icons {
+        display: flex;
+        position: right !important;
+        gap: 1vw;
+        flex-shrink: 0;
+    }
+
+    .icon-circle {
+        width: 5vw;
+        height: 5vw;
+        min-width: 24px;
+        min-height: 24px;
+        max-width: 40px;
+        max-height: 40px;
+        background: #f7f7f7;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .icon-circle img {
+        width: 2vw;
+        height: 2vw;
+        min-width: 12px;
+        min-height: 12px;
+        max-width: 16px;
+        max-height: 16px;
+    }
