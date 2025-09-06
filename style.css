@@ -885,8 +885,21 @@ hr {
     }
 }
 @media (min-width:1128px) {
+
+    .popular-home-section{
+        padding:0 32px;
+    }
+    .homes-slider{
+        gap:10px;
+    }
    .home-card{
-    flex: 1 0 calc(15.98%);
+    flex: 1 0 calc(15.929%);
+}
+
+@media (min-width:1439px){
+    .home-card{
+        flex: 1 0 calc(16.1%);
+    }
 }
 }
 
